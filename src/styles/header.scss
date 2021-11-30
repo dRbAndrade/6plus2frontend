@@ -1,0 +1,42 @@
+.free-delivery{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  background-color: #9ADDB7;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.75rem
+}
+.header{
+
+  display: flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 0 0 0 4%;
+  border-bottom: 1px solid #000;
+  font-weight: 700;
+
+  .logo{
+    font-size: 1.5rem;
+    
+  }
+
+  a{
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .navbar{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    gap: 3rem;
+    font-weight: 500;
+  }
+
+  .cart{
+    padding: 1rem 3rem;
+    background-color: #1B1B1B;
+    color: #fff;
+  }
+}

@@ -1,10 +1,11 @@
 import "../styles/home.scss"
+import Header from "../components/header"
 
 const Home  = ()=>{
  
   return(
     <>
-    Test
+      <Header></Header>
     </>
     )
 
