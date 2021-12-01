@@ -6,7 +6,7 @@ const AboutCard = ({name,url,description,linkedin,github})=>{
   return(
     <Card className="about-card">
       <div>
-        <Card.Img src = {url}/>
+        <Card.Img src = {"https://bit.ly/3lqOT3B"}/>
         <Card.Title>{name}</Card.Title>
         <Card.Text>{description}</Card.Text>
       </div>
