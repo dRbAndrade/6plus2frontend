@@ -1,0 +1,19 @@
+.toggler {
+       width: 77%;
+       font-family: 'Roboto', sans-serif;
+       > .toggleShow {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              margin: 1.2rem 3.6rem 1.2rem 3.6rem;
+              > h2 {
+                     font-weight: 700;
+                     font-size: 2.4rem;
+
+              }
+       }
+       > .toggleDescription {
+              font-size: 1.6rem;
+              margin: 0rem 3.6rem;
+       }
+}
