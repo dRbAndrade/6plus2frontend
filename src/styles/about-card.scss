@@ -1,0 +1,43 @@
+.card-container .about-card{
+  height: 100%;
+  max-width: 250px;
+  align-items:center;
+  justify-content:space-between ;
+  background-color: transparent;
+  border:none;
+  .h5{
+    text-align: center;
+  }
+  .card-img{
+    width: 100%;
+    clip-path: circle(50%);
+  }
+  
+  .links-container{
+    display: flex;
+    gap: 1rem;
+    
+    a{
+      text-decoration: none;
+      color: black;
+    }
+  }
+  
+}
+
+
+@media (min-width:900px) {
+
+  .about-card .card-title.h5{
+    font-size: 1.75rem;
+  }
+
+  .about-card .card-text{
+    font-size: 1.25rem;
+  }
+
+  .about-card .links-container{
+    font-size: 2rem;
+  }
+
+} 

@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react';
-import '../styles/not-found.scss'
+import { useEffect, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../styles/not-found.scss';
 
 const NotFound = ()=>{
 
   const [counter,setCounter] = useState(5);
-
+  const navigate = useNavigate();
   useEffect(()=>{
     const countdown = setTimeout(()=>setCounter(counter-1),1000)
     if(counter<1){
       clearTimeout(countdown);
-      window.location.href="https://wplanet.com.br";
+      navigate('/');
     }
   })
 
