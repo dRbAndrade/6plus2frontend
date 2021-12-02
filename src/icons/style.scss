@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?g0g5p2');
-  src:  url('fonts/icomoon.eot?g0g5p2#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?g0g5p2') format('truetype'),
-    url('fonts/icomoon.woff?g0g5p2') format('woff'),
-    url('fonts/icomoon.svg?g0g5p2#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?a1619v');
+  src:  url('fonts/icomoon.eot?a1619v#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?a1619v') format('truetype'),
+    url('fonts/icomoon.woff?a1619v') format('woff'),
+    url('fonts/icomoon.svg?a1619v#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-cart:before {
+  content: "\e903";
+}
+.icon-purchase:before {
+  content: "\e903";
+}
+.icon-ecommerce:before {
+  content: "\e903";
+}
+.icon-shopping:before {
+  content: "\e903";
+}
 .icon-github:before {
   content: "\e901";
 }
@@ -48,4 +60,13 @@
 }
 .icon-menu:before {
   content: "\e900";
+}
+.icon-close:before {
+  content: "\e904";
+}
+.icon-remove:before {
+  content: "\e904";
+}
+.icon-times:before {
+  content: "\e904";
 }
