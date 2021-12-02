@@ -3,10 +3,9 @@ import { Link, NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 
-
 const Header = ()=>{
 
-  const [collapsed,setCollapsed] = useState(false);
+  const [collapsed,setCollapsed] = useState(window.innerWidth<600?false:true);
 
   window.addEventListener('resize',(event)=>{
     if(window.innerWidth>=600)setCollapsed(true);
@@ -39,6 +38,8 @@ const Header = ()=>{
       closeButton.classList.toggle("show");
     },500)
   }
+
+
 
   return(
     <>
