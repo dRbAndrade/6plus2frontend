@@ -1,35 +1,22 @@
 *{
-  margin: 0;
+	margin: 0;
 	padding: 0;
 	border: none;
 	text-decoration: none;
 	box-sizing: border-box;
 }
 body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #FBFFF3;
+	  margin: 0;
+	  font-family: 'Roboto', sans-serif;
+	  background-color: #FBFFF3;
 }
 
 html {
 	font-size: 62.5%;
-	scroll-behavior: smooth;
 }
 
 #root {
-  width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-content: center;
-	align-items: center;
+  	width: 100%;
 	font-family: 'Roboto', sans-serif;
-  color: #1b1b1b;
-}
-
-.divider {
-	width: 100%;
-	border-top: .1rem solid;
-       color: #1b1b1b;
-       opacity: 100%;
+  	color: #1b1b1b;
 }

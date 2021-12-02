@@ -1,6 +1,9 @@
 import "../styles/home.scss"
 import "../styles/index.scss"
 import ToggleText from "../components/toggleText"
+import CardProduct from "../components/cardProduct"
+import ButtonBlack from "../components/buttonBlack"
+import { BsPlusLg } from "react-icons/bs";
 
 const toggles = [
        {
@@ -13,6 +16,15 @@ const toggles = [
        }
 ]
 
+const products = [
+       {
+              price: "R$599",
+              name: "Nome do tênis",
+              category: "Casual"
+
+       },
+]
+
 
 const Product  = ()=>{
  
@@ -20,12 +32,23 @@ const Product  = ()=>{
     <>
               
               {
+                     products.map((product) => {
+                            return(
+                                   <CardProduct product={product}></CardProduct>
+                            )
+                     })
+              }
+
+              
+              {
                      toggles.map((toggle) => {
                             return(
                                    <ToggleText toggle={toggle}></ToggleText>
                             )
                      })
-              }   
+              }
+
+              
  
     </>
     )
