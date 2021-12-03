@@ -2,6 +2,7 @@ import "../styles/home.scss"
 import Header from "../components/header"
 import Carrossel from "../components/carrossel"
 import Container from "react-bootstrap/Container"
+import {Helmet} from "react-helmet";
 
 const Home = () => { 
   return(
