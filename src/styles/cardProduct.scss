@@ -1,0 +1,54 @@
+.cardProduct{
+       width: 28rem;
+       height: 46rem;
+       .cardProductImg{
+              width: 100%;
+              height: 74%;
+              object-fit: cover;
+              > img {
+                     
+                     width: 100%;
+              }
+       }
+       .cardProductGreen{
+              background: #9ADDB7;
+              height: 26%;
+              width: 100%;
+              padding: 0;
+              .cardProductInfo {
+                     padding: .8rem 0rem .8rem 1.6rem;
+                     h1 {
+                            font-size: 3.6rem;
+                            font-weight: 700;    
+                     }
+                     h2{
+                            font-size: 2.4rem;
+                            font-weight: 400; 
+                     }
+                     h3{
+                            font-size: 1.6rem;
+                            font-weight: 400; 
+                     }
+                     
+                     
+              }
+
+              
+       }
+       
+}
+
+
+
+.linkToProduct{
+       height: 100%;
+       background: #1b1b1b;
+       width: 100%;
+       margin: 0;
+       padding: 0;
+}
+
+.buttonCard {
+       height: 100%;
+}
+
