@@ -30,7 +30,7 @@ const Header = ()=>{
     }
   },[collapsed]);
 
-  const toggleMenu = (event)=>{
+  const toggleMenu = ()=>{
     const navbar = document.querySelector(".header .navbar");
     const closeButton = document.querySelector(".navbar .close");
     navbar.classList.toggle("show");
@@ -38,8 +38,6 @@ const Header = ()=>{
       closeButton.classList.toggle("show");
     },500)
   }
-
-
 
   return(
     <>
@@ -57,8 +55,8 @@ const Header = ()=>{
           <NavLink to="/products">Produtos</NavLink>
           <NavLink to="/about">Sobre</NavLink>
         </nav>
-        <Link to="/carrinho" className="cart button">Carrinho</Link>
-        <Link to="/carrinho" className="cart icon collapsed"><i className="icon-cart"></i></Link>
+        <Link to="/cart" className="cart button">Carrinho</Link>
+        <Link to="/cart" className="cart icon collapsed"><i className="icon-cart"></i></Link>
       </header>
     </>
   )
