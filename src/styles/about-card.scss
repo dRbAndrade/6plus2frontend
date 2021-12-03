@@ -5,12 +5,17 @@
   justify-content:space-between ;
   background-color: transparent;
   border:none;
-  gap: 1rem;
+  gap: 3rem;
+  .card-text{
+    font-size: 1.6rem;
+  }
   .h5{
     text-align: center;
+    font-size: 2rem;
   }
   .card-img{
     width: 100%;
+    aspect-ratio: 1;
     clip-path: circle(50%);
   }
   
@@ -21,25 +26,20 @@
     a{
       text-decoration: none;
       color: black;
-      font-size: 1.5rem;
+      font-size: 3.0rem;
     }
   }
   
 }
 
-
 @media (min-width:900px) {
-
-  .about-card .card-title.h5{
-    font-size: 1.75rem;
+  .card-container .about-card{
+    .card-text{
+      font-size: 2rem;
+    }
+    .h5{
+      font-size: 3rem;
+    }
   }
-
-  .about-card .card-text{
-    font-size: 1.25rem;
-  }
-
-  .about-card .links-container{
-    font-size: 2rem;
-  }
-
-} 
+  
+}

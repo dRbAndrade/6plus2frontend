@@ -2,9 +2,9 @@
   width: 100%;
   text-align: center;
   background-color: #9ADDB7;
-  font-size: 0.7rem;
+  font-size: 1.12rem;
   font-weight: 500;
-  padding: 0.75rem;
+  padding: 1.2rem;
 }
 .header{
 
@@ -17,15 +17,16 @@
 
   .menu{
     display: none;
+    
   }
   .menu.collapsed, .navbar .close{
-    display: inline;
+    display: flex;
     border: none;
     background-color: transparent;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   .logo{
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   a{
@@ -78,7 +79,7 @@
     background-color: #000;
     color: #fff;
     height: 100%;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     padding: 1% 3%;
   }
   .cart.button.collapsed{
@@ -86,7 +87,7 @@
   }
   .cart.icon{
     display: none;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   .cart.icon.collapsed{
     display: inline;
@@ -94,7 +95,29 @@
 }
 
 @media (min-width:600px) {
+  .free-delivery{
+    font-size: 1.5rem;
+  }
   .header{
-    padding: 0 0 0 2%;
+    padding: 0 0 0 4rem;
+    *{
+      font-size: 1.6rem;
+    }
+    .logo{
+      font-size: 2.4rem;
+    }
+  }
+}
+@media (min-width:1200px) {
+  .free-delivery{
+    font-size: 2rem;
+  }
+  .header{
+    *{
+      font-size: 2rem;
+    }
+    .logo{
+      font-size: 2.4rem;
+    }
   }
 }
