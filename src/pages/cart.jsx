@@ -7,39 +7,24 @@ import Header from '../components/header';
 import CartProduct from '../components/cart-product'
 import '../styles/cart.scss'
 import {useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Cart = ()=>{
 
   const [total,setTotal] = useState(0);
-  const [products,setProducts] = useState([
-    {
-      id:1,
-      title:"Test",
-      price:599.99,
-      description:"ewuigiehrui",
-      image:"https://bit.ly/3G6Lwqy",
-      category:"Calçados"
-    },
-    {
-      id:2,
-      title:"Test",
-      price:599.99,
-      description:"ewuigiehrui",
-      image:"https://bit.ly/3G6Lwqy",
-      category:"Calçados"
-    },
-    {
-      id:3,
-      title:"Test",
-      price:599.99,
-      description:"ewuigiehrui",
-      image:"https://bit.ly/3G6Lwqy",
-      category:"Calçados"
-    }
-  ])
+  const [products,setProducts] = useState([])
+
+  async function getProducts(){
+    const products = await (await axios("http://localhost:8080/products")).data.content;
+    setProducts(products);
+  }
+
+  getProducts();
+
   useEffect(()=>{
     updateTotal()
   },[products])
+
   function remove(id){
     const newArray = products.filter(e=>e.id!==id);
     setProducts(newArray)
@@ -48,9 +33,9 @@ const Cart = ()=>{
     const itemsPrices = document.querySelectorAll(".total-price");
     let subtotal = 0;
     itemsPrices.forEach(e=>subtotal+=parseFloat(e.textContent))
-    console.log(subtotal);
     setTotal(subtotal)
   }  
+
   return(
     <>
       <Helmet>
@@ -80,11 +65,11 @@ const Cart = ()=>{
           <Col xs={12} sm={{span:8,offset:2}} md={{span:5,offset:7}} lg={{span:4,offset:8}} >
             <Row className="subtotal py-3 mb-4">
               <Col>Subtotal</Col>
-              <Col className="d-flex justify-content-end">R$ {total}</Col>
+              <Col className="d-flex justify-content-end">{`R$ ${total.toFixed(2)}`}</Col>
             </Row>
             <Row className="total mb-5">
               <Col>Total</Col>
-              <Col className="d-flex justify-content-end">{`R$ ${total}`}</Col>
+              <Col className="d-flex justify-content-end">{`R$ ${total.toFixed(2)}`}</Col>
             </Row>
             <button style={{width:"100%"}}>fechar pedido</button>
           </Col>

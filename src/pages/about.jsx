@@ -49,11 +49,11 @@ const AboutUs  = ()=>{
     },
     {
       key:6,
-      name:"Flávio Malto",
-      url:"https://bit.ly/31mFX88",
-      description:"Só sei que nada sei",
-      linkedin:"https://www.linkedin.com/in/flávio-malto-de-oliveira-03215a90/",
-      github:"https://github.com/FlavioMalto"
+      name:"Ruth Teixeira",
+      url:"https://i.ibb.co/mTyw20f/Whats-App-Image-2021-12-02-at-4-06-19-PM.jpg",
+      description:"Estudante de Programação, estudante de Italiano, prof de Inglês, prof de dança, vegana e apaixonada pelos animais",
+      linkedin:"https://www.linkedin.com/in/ruth-teixeira/",
+      github:"https://github.com/Ruthi-ctd"
     },
     {
       key:7,

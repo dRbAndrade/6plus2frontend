@@ -1,11 +1,15 @@
 $cart-multiplier:2;
+.cart-header{
+  h1{
+    font-size: $cart-multiplier*2rem;
+    position: relative;
+    left:-3rem
+  }
+}
 .product-header{
   border-bottom: 1px solid #000;
   padding: 1rem;
   font-size: $cart-multiplier*1rem;
-  h1{
-    display: inline;
-  }
 }
 
 .subtotal{
