@@ -8,7 +8,6 @@ import axios from 'axios'
 const Carrossel = () => {
 
   const [productsPage1,setProductsPage1] = useState([])
-  const [productsPage2,setProductsPage2] = useState([])
 
   async function fetchProducts(setProducts, page){
     let products = (await axios.get(`http://localhost:8080/products?size=3&page=${page}`)).data.content;
@@ -16,7 +15,6 @@ const Carrossel = () => {
   }
   useEffect(()=>{
     fetchProducts(setProductsPage1,0);
-    fetchProducts(setProductsPage2,1);
   },[])
   return (
       <Carousel variant="dark">
