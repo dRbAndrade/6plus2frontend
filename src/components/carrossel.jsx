@@ -1,68 +1,43 @@
+import { useState, useEffect } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 import '../styles/carrossel.scss'
-
+import CardProduct from './cardProduct'
+import axios from 'axios'
 const Carrossel = () => {
 
+  const [productsPage1,setProductsPage1] = useState([])
+  const [productsPage2,setProductsPage2] = useState([])
+
+  async function fetchProducts(setProducts, page){
+    let products = (await axios.get(`http://localhost:8080/products?size=3&page=${page}`)).data.content;
+    setProducts(products);
+  }
+  useEffect(()=>{
+    fetchProducts(setProductsPage1,0);
+    fetchProducts(setProductsPage2,1);
+  },[])
   return (
-    <div>
       <Carousel variant="dark">
 
-        <Carousel.Item>
-          <div id="container">
-
-            <div id="item1"><img
-              className="w-100"
-              src="https://tinyurl.com/5yd4n3mr"
-              alt="First slide"
-            />
-            </div>
-
-            <div id="item2"><img
-              className="w-100"
-              src="https://tinyurl.com/5yd4n3mr"
-              alt="First slide"
-            />
-            </div>
-
-            <div id="item3"><img
-              className="w-100"
-              src="https://tinyurl.com/5yd4n3mr"
-              alt="First slide"
-            />
-            </div>
-
-          </div>
+        <Carousel.Item interval={300000}>
+          <Row className="gap-5">
+            {productsPage1.map(product=>(
+              <Col className="d-flex g-0 justify-content-center" key={product.id}><CardProduct product={product}></CardProduct></Col>
+            ))}
+          </Row>
         </Carousel.Item>
 
-        <Carousel.Item>
-          <div id="container">
-
-            <div id="item1"><img
-              className="d-inline-flex w-100"
-              src="https://tinyurl.com/5yd4n3mr"
-              alt="First slide"
-            />
-            </div>
-
-            <div id="item2"><img
-              className="d-inline-flex w-100"
-              src="https://tinyurl.com/5yd4n3mr"
-              alt="First slide"
-            />
-            </div>
-
-            <div id="item3"><img
-              className="d-inline-flex w-100"
-              src="https://tinyurl.com/5yd4n3mr"
-              alt="First slide"
-            />
-            </div>
-
-          </div>
+        <Carousel.Item interval={300000}>
+          <Row className="gap-5">
+            {productsPage1.map(product=>(
+              <Col className="d-flex g-0 justify-content-center" key={product.id}><CardProduct product={product}></CardProduct></Col>
+            ))}
+          </Row>
         </Carousel.Item>
 
       </Carousel>
-    </div>
   )
 
 }

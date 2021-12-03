@@ -1,51 +1,13 @@
-.container-fluid{
-    position: relative;
-    width: 106.4rem;
-
-    .carousel.slide.carousel-dark{
-        position: relative;
-        width: 106.4rem;
-        height: 46.0rem;
-    
-        .carousel-inner{
-            position: relative;
-            width: 106.4rem;
-            height: 46.0rem;
-        
-            #container{
-                position: relative;
-                display: flex;
-                justify-content: space-between;
-                height: 46.0rem;
-                width: 86.4rem;
-                align-items: center;
-                margin: auto;
-
-                #item1{
-                    position: relative;
-                    width: 23.8rem;
-                    height: 46.0rem;
-                    object-fit: cover;
-                }
-
-                #item2{
-                    position: relative;
-                    width: 23.8rem;
-                    height: 46.0rem;
-                    object-fit: cover;
-                }
-
-                #item3{
-                    position: relative;
-                    width: 23.8rem;
-                    height: 46.0rem;
-                    object-fit: cover;
-                }
-            }
-        }
+.carousel.slide.carousel-dark{
+  max-height: 400px;
+  max-width: 945px;
+  a{
+    width: 5%;
+    height: 20%;
+    top:45%;
+    span{
+      width: 10rem;
+      background-size:10rem;
     }
+  }
 }
-
-
-
-

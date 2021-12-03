@@ -1,12 +1,14 @@
 import '../styles/header.scss'
 import { Link, NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { useEffect, useState } from 'react';
+import ButtonBlack from './buttonBlack';
 
 
 const Header = ()=>{
 
   const [collapsed,setCollapsed] = useState(window.innerWidth<600?false:true);
-
+  const navigate = useNavigate();
   window.addEventListener('resize',(event)=>{
     if(window.innerWidth>=600)setCollapsed(true);
     else setCollapsed(false);
@@ -55,7 +57,9 @@ const Header = ()=>{
           <NavLink to="/products">Produtos</NavLink>
           <NavLink to="/about">Sobre</NavLink>
         </nav>
-        <Link to="/cart" className="cart button">Carrinho</Link>
+        <div className="button-container">
+          <ButtonBlack buttonLink="/cart" handleSubmit={()=>navigate("/cart")} className="cart button">Carrinho</ButtonBlack>
+        </div>
         <Link to="/cart" className="cart icon collapsed"><i className="icon-cart"></i></Link>
       </header>
     </>

@@ -1,10 +1,12 @@
 import "../styles/home.scss"
 import Header from "../components/header"
+import Helmet from "react-helmet"
 import Carrossel from "../components/carrossel"
 import Container from "react-bootstrap/Container"
 import Helmet from 'react-helmet'
 import Footer from "../components/footer"
 
+const shouldCarrossel = window.innerWidth>600?true:false
 const Home = () => { 
   return(
     <>
@@ -13,9 +15,11 @@ const Home = () => {
       </Helmet>
       <Header></Header>
       <main>
-        <Container fluid>
-            <Carrossel></Carrossel>          
-        </Container>
+        {shouldCarrossel&&
+          <Container className="d-flex justify-content-center">
+            <Carrossel></Carrossel>
+          </Container>}
+
       </main>
       <Footer></Footer>
     </>

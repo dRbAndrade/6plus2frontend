@@ -6,6 +6,8 @@
   display: grid;
   grid-template-columns: repeat(var(--columns), minmax(200px,1fr));
   place-items: center;
+  border-bottom: 1px solid #1b1b1b;
+  padding-bottom: 5rem;
   gap: 2rem;
 }
 
