@@ -11,13 +11,16 @@
 }
 .cardProductGreen{
   --card-product-multiplier:1;
-  height: 30%;
+  height: 20%;
+  
   h2{
     font-size:calc(var(--card-product-multiplier)*1.5rem);
     font-weight: 700;
+    margin-bottom: .5rem;
   }
   h3{
     font-size: calc(var(--card-product-multiplier)*1.4rem);
+    margin-bottom: .5;
   }
   h4{
     font-size: calc(var(--card-product-multiplier)*1.3rem);

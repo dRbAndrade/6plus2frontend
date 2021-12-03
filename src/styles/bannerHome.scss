@@ -1,5 +1,6 @@
 .bannerHome {
       margin-top: 4%;
+      max-width: 1065px;
 }
 
 .bannerContent {
@@ -14,6 +15,10 @@
       p {
             font-size: 1.6rem;
             margin-bottom: 2.4rem;
+      }
+      .buttonBanner {
+            padding: 0;
+            height: 4.7rem;
       }
 }
 
