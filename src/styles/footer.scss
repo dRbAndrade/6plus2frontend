@@ -1,5 +1,6 @@
 .footer{
     background-color: #9ADDB7;
+    padding: 1rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -9,7 +10,6 @@
     .company{
         display: flex;
         justify-content: space-between;
-        margin-left: 5rem;
         font-size: 1.12rem;
         font-weight: 500;
         color: black;
@@ -26,20 +26,51 @@
     }
 
     .icons{
-        width: 15rem;
+        margin: 0;
+        width: 11rem;
         display: flex;
-        justify-content: space-between;
-        margin: 1rem;
+        justify-content: space-around;
         align-items: center;
         list-style: none;
         font-size: 1rem;
         font-weight: 500;
-        padding-right: 2rem;
-        margin-right: 5rem;
-
+        padding: 0;
         .bs-icon{
             width: 20px;
             height: 20px;
         }       
     }
+}
+
+@media (min-width:900px) {
+
+  .footer{
+    .company{
+      font-size: 2rem;
+    }
+    .icons{
+      width: 25%;
+      .bs-icon{
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+  
+}
+
+@media (min-width:1200px) {
+  .footer{
+    padding: 4rem;
+    .company{
+      font-size: 2.5rem;
+    }
+    .icons{
+      width: 25%;
+      .bs-icon{
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+  }
 }

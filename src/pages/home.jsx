@@ -1,6 +1,5 @@
 import "../styles/home.scss"
 import Header from "../components/header"
-import Helmet from "react-helmet"
 import Carrossel from "../components/carrossel"
 import Container from "react-bootstrap/Container"
 import Helmet from 'react-helmet'
