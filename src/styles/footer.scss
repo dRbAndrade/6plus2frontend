@@ -1,0 +1,45 @@
+.footer{
+    background-color: #9ADDB7;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .company{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 5rem;
+        font-size: 1.12rem;
+        font-weight: 500;
+        color: black;
+        align-items: center;
+
+        .bs-icon{
+            width: 20px;
+            height: 20px;
+        }
+
+        span{
+            padding-left: 0.5rem;
+        }
+    }
+
+    .icons{
+        width: 15rem;
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem;
+        align-items: center;
+        list-style: none;
+        font-size: 1rem;
+        font-weight: 500;
+        padding-right: 2rem;
+        margin-right: 5rem;
+
+        .bs-icon{
+            width: 20px;
+            height: 20px;
+        }       
+    }
+}
