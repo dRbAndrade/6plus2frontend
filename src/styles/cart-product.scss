@@ -1,9 +1,21 @@
 .product-row{
-  font-size: 2rem;
+  *{
+    font-size: 2rem;
+  }
   img{
     width: 150px;
     height: 150px;
     object-fit: contain;
   }
   border-bottom: 1px solid #000;
+  span{
+    margin: 0 1rem;
+  }
+  button{
+    border: none;
+    background-color: transparent;
+  }
+  div:last-of-type button{
+      color:#7E7B7B
+  }
 }

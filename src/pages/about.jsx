@@ -3,6 +3,7 @@ import AboutCard from "../components/about-card"
 import '../styles/about.scss'
 import Container from "react-bootstrap/Container"
 import { Helmet } from "react-helmet"
+import ToggleText from "../components/toggleText"
 
 const AboutUs  = ()=>{
 
@@ -49,11 +50,11 @@ const AboutUs  = ()=>{
     },
     {
       key:6,
-      name:"Flávio Malto",
-      url:"https://bit.ly/31mFX88",
-      description:"Só sei que nada sei",
-      linkedin:"https://www.linkedin.com/in/flávio-malto-de-oliveira-03215a90/",
-      github:"https://github.com/FlavioMalto"
+      name:"Ruth Teixeira",
+      url:"https://i.ibb.co/mTyw20f/Whats-App-Image-2021-12-02-at-4-06-19-PM.jpg",
+      description:"Estudante de Programação, estudante de Italiano, prof de Inglês, prof de dança, vegana e apaixonada pelos animais",
+      linkedin:"https://www.linkedin.com/in/ruth-teixeira/",
+      github:"https://github.com/Ruthi-ctd"
     },
     {
       key:7,
@@ -72,6 +73,13 @@ const AboutUs  = ()=>{
       github:""
     }
   ]
+
+  const aboutText = {
+
+    title:"Sobre o projeto",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus, sit. Similique dignissimos sed ea incidunt nisi! Eius mollitia fugit, praesentium non doloribus laboriosam vel expedita recusandae, saepe dignissimos eligendi minus.",
+
+  }
  
   return(
     <>
@@ -89,7 +97,9 @@ const AboutUs  = ()=>{
             )
           })}
           </div>
+          <ToggleText toggle={aboutText}/>
         </Container>
+
       </main>
     </>
     )
