@@ -4,6 +4,7 @@ import Helmet from "react-helmet"
 import Carrossel from "../components/carrossel"
 import Container from "react-bootstrap/Container"
 
+const shouldCarrossel = window.innerWidth>600?true:false
 const Home = () => { 
   return(
     <>
@@ -12,9 +13,11 @@ const Home = () => {
       </Helmet>
       <Header></Header>
       <main>
-        <Container fluid>
-            <Carrossel></Carrossel>          
-        </Container>
+        {shouldCarrossel&&
+          <Container className="d-flex justify-content-center">
+            <Carrossel></Carrossel>
+          </Container>}
+
       </main>
     </>
   )

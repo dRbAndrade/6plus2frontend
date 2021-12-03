@@ -28,10 +28,10 @@ const CartProduct = ({product,updateCart,remove})=>{
       <Col className="d-flex align-items-center justify-content-center">{price}</Col>
       <Col className="d-flex align-items-center justify-content-center">
           <button id="minus" onClick={updateQuantity}>-</button>
-          {quantity}
+          <span>{quantity}</span>
           <button id="plus" onClick={updateQuantity}>+</button>
       </Col>
-      <Col className=" d-flex align-items-center justify-content-center total-price">{totalPrice}</Col>
+      <Col className=" d-flex align-items-center justify-content-center total-price">{totalPrice.toFixed(2)}</Col>
       <Col className="d-flex align-items-center justify-content-center"><button onClick={()=>remove(id)}>Remover</button></Col>
     </Row>
   )
