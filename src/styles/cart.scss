@@ -1,9 +1,7 @@
 $cart-multiplier:2;
 .cart-header{
   h1{
-    font-size: $cart-multiplier*2rem;
-    position: relative;
-    left:-3rem
+    font-size: $cart-multiplier*2rem;    
   }
 }
 .product-header{
@@ -20,4 +18,14 @@ $cart-multiplier:2;
 .total{
   font-size: $cart-multiplier*1.25rem;
   font-weight: 700;
+}
+
+@media (min-width:900px) {
+  .cart-header{
+    h1{
+      position: relative;
+      left:-3rem
+    }
+  }
+  
 }

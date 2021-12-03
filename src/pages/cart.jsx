@@ -14,12 +14,15 @@ const Cart = ()=>{
   const [total,setTotal] = useState(0);
   const [products,setProducts] = useState([])
 
-  async function getProducts(){
-    const products = await (await axios("http://localhost:8080/products")).data.content;
+
+  async function fetchProducts(){
+    let products = (await axios.get("http://localhost:8080/products")).data.content;
     setProducts(products);
   }
+  useEffect(()=>{
+    fetchProducts();
+  },[])
 
-  getProducts();
 
   useEffect(()=>{
     updateTotal()
