@@ -15,8 +15,11 @@ const ToggleText = ({toggle})=>{
     <>
     <Container className="toggler">
         <Row className="toggleShow justify-content-between">
-          <Col sm={10}><h2 className="toggleTitle ">{toggle.title}</h2></Col>
-          <Col sm={2} className="d-flex justify-content-end"><button onClick={() =>setShow(!show)}> { show ? <BsDashLg /> : <BsPlusLg /> } </button> </Col>
+          <Col className="d-flex align-items-center justify-content-between">
+            <h2 className="toggleTitle ">{toggle.title}</h2>
+            <button onClick={() =>setShow(!show)}> { show ? <BsDashLg /> : <BsPlusLg /> } </button>
+          </Col>
+          
         </Row>
           <p className="toggleDescription">
               {

@@ -97,7 +97,7 @@
     display: inline;
   }
   .button-container{
-    // display: flex;
+    display: none;
     height: 4rem;
     width: 100%;
     max-width: 160px;
@@ -105,6 +105,9 @@
 }
 
 @media (min-width:600px) {
+  .header .button-container{
+    display: flex;
+  }
   .free-delivery{
     font-size: 1.5rem;
   }

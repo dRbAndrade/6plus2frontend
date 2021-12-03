@@ -26,7 +26,7 @@ const products = [
 ]
 
 
-const Product  = ()=>{
+const Products  = ()=>{
  
   return(
     <>
@@ -55,6 +55,6 @@ const Product  = ()=>{
 
 }
 
-export default Product;
+export default Products;
 
 

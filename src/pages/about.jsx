@@ -80,6 +80,11 @@ const AboutUs  = ()=>{
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus, sit. Similique dignissimos sed ea incidunt nisi! Eius mollitia fugit, praesentium non doloribus laboriosam vel expedita recusandae, saepe dignissimos eligendi minus.",
 
   }
+
+  const toolsText = {
+    title:"Tecnologias utilizadas",
+    description:"Bootstrap, React, Spring Boot, Scss, MySQL"
+  }
  
   return(
     <>
@@ -98,6 +103,8 @@ const AboutUs  = ()=>{
           })}
           </div>
           <ToggleText toggle={aboutText}/>
+          <ToggleText toggle={toolsText}/>
+
         </Container>
 
       </main>
