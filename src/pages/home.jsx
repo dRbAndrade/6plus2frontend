@@ -3,11 +3,12 @@ import Header from "../components/header"
 import Carrossel from "../components/carrossel"
 import Container from "react-bootstrap/Container"
 
-
-const Home = () => {
-
-  return (
+const Home = () => { 
+  return(
     <>
+      <Helmet>
+        <title>6pluS2store</title>
+      </Helmet>
       <Header></Header>
       <main>
         <Container fluid>
@@ -16,7 +17,6 @@ const Home = () => {
       </main>
     </>
   )
-
 }
 
 export default Home;
