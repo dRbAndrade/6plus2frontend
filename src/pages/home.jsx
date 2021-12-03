@@ -15,7 +15,7 @@ const Home = () => {
       </Helmet>
       <Header></Header>
       
-      <main className="p-0">
+      <main>
         <BannerHome></BannerHome>
         {shouldCarrossel&&
           <Row className="p-0 d-flex justify-content-center">
