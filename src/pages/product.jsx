@@ -18,7 +18,7 @@ const toggles = [
 ]
 
 
-const Products  = ()=>{
+const Product  = ()=>{
  
   const [products,setProducts] = useState([])
 
@@ -49,6 +49,6 @@ const Products  = ()=>{
 
 }
 
-export default Products;
+export default Product;
 
 

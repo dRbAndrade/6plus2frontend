@@ -19,7 +19,7 @@ const Carrossel = () => {
   return (
       <Carousel variant="dark">
 
-        <Carousel.Item interval={300000}>
+        <Carousel.Item interval={6000}>
           <Row className="gap-5">
             {productsPage1.map(product=>(
               <Col className="d-flex g-0 justify-content-center" key={product.id}><CardProduct product={product}></CardProduct></Col>
@@ -27,7 +27,7 @@ const Carrossel = () => {
           </Row>
         </Carousel.Item>
 
-        <Carousel.Item interval={300000}>
+        <Carousel.Item interval={6000}>
           <Row className="gap-5">
             {productsPage1.map(product=>(
               <Col className="d-flex g-0 justify-content-center" key={product.id}><CardProduct product={product}></CardProduct></Col>
