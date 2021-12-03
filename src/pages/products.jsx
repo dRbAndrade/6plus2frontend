@@ -2,8 +2,7 @@ import "../styles/home.scss"
 import "../styles/index.scss"
 import ToggleText from "../components/toggleText"
 import CardProduct from "../components/cardProduct"
-import ButtonBlack from "../components/buttonBlack"
-import { BsPlusLg } from "react-icons/bs";
+
 
 const toggles = [
        {
