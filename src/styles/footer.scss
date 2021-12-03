@@ -1,0 +1,76 @@
+.footer{
+    background-color: #9ADDB7;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .company{
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.12rem;
+        font-weight: 500;
+        color: black;
+        align-items: center;
+
+        .bs-icon{
+            width: 20px;
+            height: 20px;
+        }
+
+        span{
+            padding-left: 0.5rem;
+        }
+    }
+
+    .icons{
+        margin: 0;
+        width: 11rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0;
+        .bs-icon{
+            width: 20px;
+            height: 20px;
+        }       
+    }
+}
+
+@media (min-width:900px) {
+
+  .footer{
+    .company{
+      font-size: 2rem;
+    }
+    .icons{
+      width: 25%;
+      .bs-icon{
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+  
+}
+
+@media (min-width:1200px) {
+  .footer{
+    padding: 4rem;
+    .company{
+      font-size: 2.5rem;
+    }
+    .icons{
+      width: 25%;
+      .bs-icon{
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+  }
+}
