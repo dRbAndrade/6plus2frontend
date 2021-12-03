@@ -1,0 +1,43 @@
+.bannerHome {
+      margin-top: 4%;
+      max-width: 1065px;
+}
+
+.bannerContent {
+      width: 42rem;
+
+      .bannerTitle {
+            
+            font-weight: 600;
+            font-size: 3.6rem;
+            color: #1b1b1b;
+      }
+      p {
+            font-size: 1.6rem;
+            margin-bottom: 2.4rem;
+      }
+      .buttonBanner {
+            padding: 0;
+            height: 4.7rem;
+      }
+}
+
+.bannerImg {
+      img {
+            width: 85%;
+      }
+      
+}
+
+.gif {
+      margin: 0;
+      padding: 0;
+      width: 48px;
+      animation: 4s rotateGif infinite;
+      
+}
+
+@keyframes rotateGif {
+  0% { transform: rotate3d(0, 0, 1, -300deg); }
+  100% { transform: none;}
+}
