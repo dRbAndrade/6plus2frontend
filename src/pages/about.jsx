@@ -3,6 +3,7 @@ import AboutCard from "../components/about-card"
 import '../styles/about.scss'
 import Container from "react-bootstrap/Container"
 import { Helmet } from "react-helmet"
+import ToggleText from "../components/toggleText"
 
 const AboutUs  = ()=>{
 
@@ -72,6 +73,13 @@ const AboutUs  = ()=>{
       github:""
     }
   ]
+
+  const aboutText = {
+
+    title:"Sobre o projeto",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus, sit. Similique dignissimos sed ea incidunt nisi! Eius mollitia fugit, praesentium non doloribus laboriosam vel expedita recusandae, saepe dignissimos eligendi minus.",
+
+  }
  
   return(
     <>
@@ -89,7 +97,9 @@ const AboutUs  = ()=>{
             )
           })}
           </div>
+          <ToggleText toggle={aboutText}/>
         </Container>
+
       </main>
     </>
     )

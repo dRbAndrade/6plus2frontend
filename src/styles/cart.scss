@@ -3,6 +3,22 @@ $cart-multiplier:2;
   h1{
     font-size: $cart-multiplier*2rem;    
   }
+  a{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration: none;
+    color: #7E7B7B;
+    font-size: 1.5rem;
+    height: fit-content;
+
+    &:hover path{
+      color:#0A58CA
+    }
+    path{
+      color:#7E7B7B
+    }
+  }
 }
 .product-header{
   border-bottom: 1px solid #000;

@@ -3,18 +3,21 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import Header from '../components/header';
 import CartProduct from '../components/cart-product'
 import '../styles/cart.scss'
 import {useEffect, useState } from 'react';
+import ButtonBlack from '../components/buttonBlack';
+import { BsChevronLeft } from "react-icons/bs";
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Cart = ()=>{
 
   const [total,setTotal] = useState(0);
   const [products,setProducts] = useState([])
-
-
+  const navigate = useNavigate();
   async function fetchProducts(){
     let products = (await axios.get("http://localhost:8080/products")).data.content;
     setProducts(products);
@@ -23,11 +26,24 @@ const Cart = ()=>{
     fetchProducts();
   },[])
 
-
   useEffect(()=>{
     updateTotal()
   },[products])
 
+  function handleSubmit(){
+    Swal.fire({
+      icon:'success',
+      html:
+      `
+      <h1 style="font-size:2rem">Obrigado por comprar conosco!<h1/>
+      <div style="text-align:left;font-size:1.5rem">
+        Você será redirecionado à home.
+      </div>`
+    })
+    setTimeout(()=>{
+      navigate("/");
+    },2000)
+  }
   function remove(id){
     const newArray = products.filter(e=>e.id!==id);
     setProducts(newArray)
@@ -48,7 +64,7 @@ const Cart = ()=>{
       <main>
         <Container fluid className="cart-header d-flex justify-content-between mb-5 g-0">
           <h1>Carrinho</h1>
-          <Link to="/products"> (MALU, ICON AQUI) Continuar comprando</Link>
+          <Link to="/products"> {<BsChevronLeft/>} Continuar comprando</Link>
         </Container>
         <Row className="product-header mb-3 g-2">
             <Col md={{span:4}}>Produto</Col>
@@ -74,7 +90,9 @@ const Cart = ()=>{
               <Col>Total</Col>
               <Col className="d-flex justify-content-end">{`R$ ${total.toFixed(2)}`}</Col>
             </Row>
-            <button style={{width:"100%"}}>fechar pedido</button>
+            <Row>
+              <ButtonBlack handleSubmit={handleSubmit}>Fechar Pedido</ButtonBlack>
+            </Row>
           </Col>
         </Row>
       </main>
