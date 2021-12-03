@@ -1,0 +1,36 @@
+:root{
+  --columns:auto-fit
+}
+
+.card-container{
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(200px,1fr));
+  place-items: center;
+  gap: 2rem;
+}
+
+.card-container{
+  .card:nth-of-type(7),
+  .card:nth-of-type(8){
+    .links-container{
+      display: none;
+    }
+  }
+}
+
+@media (min-width:600px) {
+  .card-container{
+    gap: 3rem;
+  }
+}
+@media (min-width:900px) {
+  .card-container{
+    gap: 5rem
+  }
+}
+@media (min-width:1200px) {
+  :root{
+    --columns:4
+  }
+  
+}

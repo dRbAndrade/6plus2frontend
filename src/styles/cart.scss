@@ -1,0 +1,19 @@
+$cart-multiplier:2;
+.product-header{
+  border-bottom: 1px solid #000;
+  padding: 1rem;
+  font-size: $cart-multiplier*1rem;
+  h1{
+    display: inline;
+  }
+}
+
+.subtotal{
+  font-size: $cart-multiplier*1rem;
+  font-weight: 500;
+  border-bottom: 1px solid #000;
+}
+.total{
+  font-size: $cart-multiplier*1.25rem;
+  font-weight: 700;
+}

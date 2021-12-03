@@ -1,12 +1,12 @@
 .free-delivery{
   display: flex;
-  width: 100vw;
   align-items:center;
   justify-content:center;
+  width: 100%;
   background-color: #9ADDB7;
-  font-size: 0.75rem;
+  font-size: 1.12rem;
   font-weight: 500;
-  padding: 0.75rem
+  padding: 1.2rem;
 }
 .header{
 
@@ -14,13 +14,22 @@
   width: 100vw;
   align-items:center;
   justify-content:space-between;
-  padding: 0 0 0 4%;
+  padding: 0 4% 0 1%;
   border-bottom: 1px solid #000;
   font-weight: 700;
 
-  .logo{
-    font-size: 1.5rem;
+  .menu{
+    display: none;
     
+  }
+  .menu.collapsed, .navbar .close{
+    display: flex;
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+  }
+  .logo{
+    font-size: 2rem;
   }
 
   a{
@@ -32,13 +41,86 @@
     display: flex;
     align-items:center;
     justify-content:center;
+    flex-direction: column;
+    position: absolute;
+    padding: 0;
+    top:0;
+    left:-100%;
+    background-color: #FBFFF3;
+    height: 100vh;
+    width: 100vw;
     gap: 3rem;
+    font-size: 1.5rem;
     font-weight: 500;
-  }
+    transition: left 0.3s ease-out;
+    z-index: 2;
 
-  .cart{
-    padding: 1rem 3rem;
-    background-color: #1B1B1B;
+    .close{
+      position: absolute;
+      top: -3rem;
+      right: 1rem;
+      transition: top 0.3s ease-out;
+    }
+
+    .close.show{
+      top: 1rem;
+    }
+  }
+  .navbar.show{
+    left: 0;
+  }
+  .navbar.collapsed{
+    display: flex;
+    flex-direction: row;
+    position: static;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  .cart.button{
+    display: none;
+    background-color: #000;
     color: #fff;
+    height: 100%;
+    font-size: 1.6rem;
+    padding: 1% 3%;
+  }
+  .cart.button.collapsed{
+    display: inline;
+  }
+  .cart.icon{
+    display: none;
+    font-size: 2rem;
+  }
+  .cart.icon.collapsed{
+    display: inline;
+  }
+}
+
+@media (min-width:600px) {
+  .free-delivery{
+    font-size: 1.5rem;
+  }
+  .header{
+    padding: 0 0 0 4rem;
+    *{
+      font-size: 1.6rem;
+    }
+    .logo{
+      font-size: 2.4rem;
+    }
+  }
+}
+@media (min-width:1200px) {
+  .free-delivery{
+    font-size: 2rem;
+  }
+  .header{
+    *{
+      font-size: 2rem;
+    }
+    .logo{
+      font-size: 2.4rem;
+    }
   }
 }

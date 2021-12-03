@@ -1,0 +1,9 @@
+.product-row{
+  font-size: 2rem;
+  img{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+  border-bottom: 1px solid #000;
+}
