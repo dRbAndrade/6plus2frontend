@@ -19,8 +19,12 @@ const BannerHome = ()=>{
                               </Container>
                         </Col>
                         <Col sm={{span: 5}} className="bannerImg d-flex justify-content-end">
-                              <img src="https://i.imgur.com/ft3BsID.png" alt="" />
+                              <div className="imgBox">
+                                    <img className="gif" src="https://i.imgur.com/ogDVMFn.png" alt="" />
+                              </div>
+                              
                         </Col>
+                        
                 </Row>                           
                      
               </>
