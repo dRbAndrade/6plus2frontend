@@ -22,7 +22,7 @@ const CartProduct = ({product,updateCart,remove})=>{
       
   }
   return(
-    <Row className="product-row g-0">
+    <Row className="product-row g-0 py-5">
       <Col className="d-flex align-items-center justify-content-center"><img src={image} alt="Product"/></Col>
       <Col className="d-flex align-items-center">{title}</Col>
       <Col className="d-flex align-items-center justify-content-center">{price}</Col>

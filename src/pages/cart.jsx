@@ -63,11 +63,14 @@ const Cart = ()=>{
       </Helmet>
       <Header/>
       <main>
-        <Container fluid className="cart-header d-flex justify-content-between mb-5 g-0">
-          <h1>Carrinho</h1>
-          <Link to="/products"> {<BsChevronLeft/>} Continuar comprando</Link>
-        </Container>
-        <Row className="product-header mb-3 g-2">
+        <Container>
+          <Row className="cart-header">
+            <Col className="d-flex justify-content-between mb-5 g-0">
+              <h1>Carrinho</h1>
+              <Link to="/products"> {<BsChevronLeft/>} Continuar comprando</Link>
+            </Col>
+          </Row>
+        <Row className="product-header g-2">
             <Col md={{span:4}}>Produto</Col>
             <Col className="d-flex justify-content-center" md={{span:2}}>Preço</Col>
             <Col className="d-flex justify-content-center" md={{span:2}}>Quantidade</Col>
@@ -96,6 +99,7 @@ const Cart = ()=>{
             </Row>
           </Col>
         </Row>
+        </Container>
       </main>
     </>
   );
