@@ -1,8 +1,5 @@
-:root{
-  --columns:auto-fit
-}
-
 .card-container{
+  --columns:auto-fit;
   display: grid;
   grid-template-columns: repeat(var(--columns), minmax(200px,1fr));
   place-items: center;
@@ -31,7 +28,7 @@
   }
 }
 @media (min-width:1200px) {
-  :root{
+  .card-container{
     --columns:4
   }
   

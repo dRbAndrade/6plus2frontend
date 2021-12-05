@@ -2,7 +2,7 @@ import "../styles/home.scss"
 import Header from "../components/header"
 import Carrossel from "../components/carrossel"
 import BannerHome from "../components/bannerHome"
-import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
 import Helmet from 'react-helmet'
 import Footer from "../components/footer"
 
@@ -15,12 +15,13 @@ const Home = () => {
       </Helmet>
       <Header></Header>
       
-      <main className="p-0">
+      <main>
+        
         <BannerHome></BannerHome>
         {shouldCarrossel&&
-          <Container className="p-0 d-flex justify-content-center">
+          <Row className="p-0 d-flex justify-content-center">
             <Carrossel></Carrossel>
-          </Container>}
+          </Row>}
       </main>
       <Footer></Footer>
     </>

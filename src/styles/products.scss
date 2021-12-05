@@ -1,0 +1,20 @@
+.filters{
+  height: 4rem;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  gap:1rem;
+}
+
+.products-container.row{
+  --columns:auto-fit;
+  display: grid;
+  grid-template-columns: repeat(var(--columns),minmax(min(100%,200px),1fr) );
+  place-items: center;
+  gap: 2rem;
+}
+@media (min-width:1200px) {
+  .products-container.row{
+    --columns:4
+  }
+  
+}
