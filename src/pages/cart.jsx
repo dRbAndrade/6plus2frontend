@@ -38,7 +38,8 @@ const Cart = ()=>{
       <h1 style="font-size:2rem">Obrigado por comprar conosco!<h1/>
       <div style="text-align:left;font-size:1.5rem">
         Você será redirecionado à home.
-      </div>`
+      </div>`,
+      timer:2000
     })
     setTimeout(()=>{
       navigate("/");
