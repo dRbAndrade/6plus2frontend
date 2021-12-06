@@ -1,0 +1,23 @@
+$product-multiplier:1;
+.product-image{
+  width: 100%;
+}
+.product-info.card{
+  border:none;
+  background-color: transparent;
+  .card-title{
+    font-size: $product-multiplier*2.5rem;
+  }
+  .card-subtitle{
+    font-size: $product-multiplier*1.6rem;
+    span{
+      font-size: $product-multiplier*1.2rem;
+      text-decoration: line-through;
+    }
+    border-bottom: 1px solid #000;
+  }
+  .card-text{
+    font-size: $product-multiplier*1.8rem;
+  }
+  width: 100%;
+}
