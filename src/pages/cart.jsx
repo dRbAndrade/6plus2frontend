@@ -12,6 +12,7 @@ import ButtonBlack from '../components/buttonBlack';
 import { BsChevronLeft } from "react-icons/bs";
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import Footer from '../components/footer';
 
 const Cart = ()=>{
 
@@ -52,7 +53,9 @@ const Cart = ()=>{
   function updateTotal(){
     const itemsPrices = document.querySelectorAll(".total-price");
     let subtotal = 0;
-    itemsPrices.forEach(e=>subtotal+=parseFloat(e.textContent))
+    itemsPrices.forEach(e=>{
+      subtotal+=parseFloat(e.textContent.substring(3));
+    })
     setTotal(subtotal)
   }  
 
@@ -88,11 +91,11 @@ const Cart = ()=>{
           <Col xs={12} sm={{span:8,offset:2}} md={{span:5,offset:7}} lg={{span:4,offset:8}} >
             <Row className="subtotal py-3 mb-4">
               <Col>Subtotal</Col>
-              <Col className="d-flex justify-content-end">{`R$ ${total.toFixed(2)}`}</Col>
+              <Col className="d-flex justify-content-end">R$ {total.toFixed(2)}</Col>
             </Row>
             <Row className="total mb-5">
               <Col>Total</Col>
-              <Col className="d-flex justify-content-end">{`R$ ${total.toFixed(2)}`}</Col>
+              <Col className="d-flex justify-content-end">R$ {total.toFixed(2)}</Col>
             </Row>
             <Row>
               <ButtonBlack handleSubmit={handleSubmit}>Fechar Pedido</ButtonBlack>
@@ -101,6 +104,7 @@ const Cart = ()=>{
         </Row>
         </Container>
       </main>
+      <Footer/>
     </>
   );
 

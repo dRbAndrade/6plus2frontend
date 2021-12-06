@@ -25,13 +25,13 @@ const CartProduct = ({product,updateCart,remove})=>{
     <Row className="product-row g-0 py-5">
       <Col className="d-flex align-items-center justify-content-center"><img src={image} alt="Product"/></Col>
       <Col className="d-flex align-items-center">{title}</Col>
-      <Col className="d-flex align-items-center justify-content-center">`R$ ${price.toFixed(2)}`</Col>
+      <Col className="d-flex align-items-center justify-content-center">R$ {price.toFixed(2)}</Col>
       <Col className="d-flex align-items-center justify-content-center">
           <button id="minus" onClick={updateQuantity}>-</button>
           <span>{quantity}</span>
           <button id="plus" onClick={updateQuantity}>+</button>
       </Col>
-      <Col className=" d-flex align-items-center justify-content-center total-price">{`R$ ${totalPrice.toFixed(2)}`}</Col>
+      <Col className=" d-flex align-items-center justify-content-center total-price">R$ {totalPrice.toFixed(2)}</Col>
       <Col className="d-flex align-items-center justify-content-center"><button onClick={()=>remove(id)}>Remover</button></Col>
     </Row>
   )
