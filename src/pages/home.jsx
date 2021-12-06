@@ -31,7 +31,7 @@ const Home = () => {
         </BannerPromo>
         <h1 className="categoryTitle">Os mais vendidos</h1>
         {shouldCarrossel&&
-          <Row className="p-0 d-flex justify-content-center">
+          <Row className="p-0 g-0 d-flex justify-content-center">
             <Carrossel></Carrossel>
           </Row>}
       </main>
