@@ -1,0 +1,14 @@
+.breadcrumb{
+  a{
+    padding: 0 1rem;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #000;
+  }
+  a:hover{
+    color: #00F;
+  }
+  a + a{
+    border-left: 1px solid #000;
+  }
+}

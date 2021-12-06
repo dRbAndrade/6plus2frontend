@@ -5,13 +5,9 @@ import BannerHome from "../components/bannerHome"
 import BannerPromo from "../components/bannerPromo"
 import ButtonBlack from "../components/buttonBlack"
 import Categories from "../components/categories"
-
-
 import Row from "react-bootstrap/Row"
-import Helmet from 'react-helmet'
 import Footer from "../components/footer"
-
-
+import {Helmet} from "react-helmet"
 
 const shouldCarrossel = window.innerWidth>600?true:false
 const Home = () => { 
@@ -20,7 +16,7 @@ const Home = () => {
       <Helmet>
         <title>6pluS2store</title>
       </Helmet>
-      <Header></Header>
+      <Header/>
       
       <main>
         

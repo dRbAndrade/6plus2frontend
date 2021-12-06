@@ -2,8 +2,9 @@ import Header from "../components/header"
 import AboutCard from "../components/about-card"
 import '../styles/about.scss'
 import Container from "react-bootstrap/Container"
-import { Helmet } from "react-helmet"
 import ToggleText from "../components/toggleText"
+import Footer from "../components/footer"
+import { Helmet } from "react-helmet"
 
 const AboutUs  = ()=>{
 
@@ -11,7 +12,7 @@ const AboutUs  = ()=>{
     {
       key:1,
       name:"Matheus Andrade",
-      url:"https://bit.ly/3lqOT3B",
+      url:"https://scontent.fbel18-1.fna.fbcdn.net/v/t39.30808-6/224380060_3051443991844956_6316769821200787081_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeHeFdtt3PCfPCQyPuattuWVk0O3lzilKs-TQ7eXOKUqz_TSC-Sg_9-c8ZY8Cc_y0E5xPTPr0Gvx6ZTVIpXez0Gg&_nc_ohc=4UGzqYK5X4gAX8JdTKn&tn=9a9UITIeJL0pwdHA&_nc_ht=scontent.fbel18-1.fna&oh=3092b277cbeaaed755cba71710fc198c&oe=61B2B33E",
       description:"Metaleiro, nerd, geek, otaku, amante da comédia. Gosto de consertar bugs (que eu mesmo crio sem querer)",
       linkedin:"https://www.linkedin.com/in/matheus-drb-andrade/",
       github:"https://github.com/dRbAndrade"
@@ -88,10 +89,8 @@ const AboutUs  = ()=>{
  
   return(
     <>
-      <Helmet>
-        <title>Sobre nós | 6pluS2store</title>
-      </Helmet>
-      <Header></Header>
+      <Helmet><title>Sobre nós | 6pluS2store</title></Helmet>
+      <Header/>
       <main>
         <Container>
           <div className="card-container">
@@ -106,8 +105,8 @@ const AboutUs  = ()=>{
           <ToggleText toggle={toolsText}/>
 
         </Container>
-
       </main>
+      <Footer/>
     </>
     )
 
