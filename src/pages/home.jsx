@@ -3,9 +3,8 @@ import Header from "../components/header"
 import Carrossel from "../components/carrossel"
 import BannerHome from "../components/bannerHome"
 import Row from "react-bootstrap/Row"
-import Helmet from 'react-helmet'
 import Footer from "../components/footer"
-
+import {Helmet} from "react-helmet"
 const shouldCarrossel = window.innerWidth>600?true:false
 const Home = () => { 
   return(
@@ -13,7 +12,7 @@ const Home = () => {
       <Helmet>
         <title>6pluS2store</title>
       </Helmet>
-      <Header></Header>
+      <Header/>
       
       <main>
         

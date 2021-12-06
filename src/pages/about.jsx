@@ -2,9 +2,9 @@ import Header from "../components/header"
 import AboutCard from "../components/about-card"
 import '../styles/about.scss'
 import Container from "react-bootstrap/Container"
-import { Helmet } from "react-helmet"
 import ToggleText from "../components/toggleText"
 import Footer from "../components/footer"
+import { Helmet } from "react-helmet"
 
 const AboutUs  = ()=>{
 
@@ -89,10 +89,8 @@ const AboutUs  = ()=>{
  
   return(
     <>
-      <Helmet>
-        <title>Sobre nós | 6pluS2store</title>
-      </Helmet>
-      <Header></Header>
+      <Helmet><title>Sobre nós | 6pluS2store</title></Helmet>
+      <Header/>
       <main>
         <Container>
           <div className="card-container">

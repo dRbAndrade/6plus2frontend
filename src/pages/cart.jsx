@@ -1,7 +1,6 @@
 import Container from 'react-bootstrap/Container'
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import Header from '../components/header';
@@ -13,6 +12,7 @@ import { BsChevronLeft } from "react-icons/bs";
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Footer from '../components/footer';
+import { Helmet } from 'react-helmet';
 
 const Cart = ()=>{
 
@@ -61,9 +61,7 @@ const Cart = ()=>{
 
   return(
     <>
-      <Helmet>
-        <title>Carrinho | 6pluS2store</title>
-      </Helmet>
+      <Helmet><title>Carrinho | 6pluS2store</title></Helmet>
       <Header/>
       <main>
         <Container>

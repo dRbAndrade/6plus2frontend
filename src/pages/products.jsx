@@ -2,7 +2,6 @@ import CardProduct from "../components/cardProduct"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import Header from "../components/header"
-import { Helmet } from "react-helmet"
 import Row from "react-bootstrap/Row"
 import Col from  "react-bootstrap/Col"
 import { BsChevronRight } from "react-icons/bs"
@@ -10,6 +9,7 @@ import FilterDropdown from "../components/filter-dropdown"
 import "../styles/products.scss"
 import { useLocation, useNavigate } from "react-router-dom"
 import Footer from "../components/footer"
+import { Helmet } from "react-helmet"
 
 
 const Products  = (props)=>{
@@ -64,9 +64,7 @@ const Products  = (props)=>{
 
   return(
     <>
-      <Helmet>
-        <title>Produtos | 6pluS2store</title>
-      </Helmet>
+      <Helmet><title>Products | 6pluS2store</title></Helmet>
       <Header></Header>
       <main>
         <Row className="g-0">

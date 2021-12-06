@@ -1,0 +1,11 @@
+.product-size{
+  font-size: 1.6rem;
+  border: 1px solid #000;
+  padding: 0.5rem 2rem;
+  background-color: transparent;
+}
+
+.product-size.selected{
+  background-color: #000;
+  color:#fff;
+}
