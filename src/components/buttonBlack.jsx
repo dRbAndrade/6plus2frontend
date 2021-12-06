@@ -5,7 +5,7 @@ const ButtonBlack = ({children, buttonIcon, className,handleSubmit }) => {
   return (
     <>
       <Button onClick={handleSubmit} className={`${className} w-100`} bsPrefix="buttonBlack">
-        {buttonIcon} {children}
+         {children} {buttonIcon}
       </Button>
     </>
   );

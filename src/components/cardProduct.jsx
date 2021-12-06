@@ -12,11 +12,12 @@ const CardProduct = ({product,handleButton,buttonIcon})=>{
   price = price ? price.toFixed(2):price;
   return(
     <>
-       <Card className="cardProduct">
+      
+       <Card className="cardProduct border-0">
          <Card.Img variant="top" src={image}/>
          <Container className="cardProductGreen g-0">
          <Row className="d-flex w-100 h-100 m-0">
-            <Col sm={8} className="d-flex flex-column pt-4 ps-4 g-0">
+            <Col sm={9} className="d-flex flex-column pt-4 ps-4 g-0">
               <Card.Title className="mb-0"><h2>{`R$ ${price}`}</h2></Card.Title>
               <Card.Subtitle className="mb-0"><h3>{title}</h3></Card.Subtitle>
               <Card.Text className="mb-0"><span>{category}</span></Card.Text>

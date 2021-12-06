@@ -3,9 +3,10 @@
   width: 100%;
   max-height: 400px;
   max-width: 300px;
+ 
   img{
-    height: 70%;
-    object-fit: fill;
+    height: 100%;
+    object-fit: cover;
     aspect-ratio: 1;
   }
   path{

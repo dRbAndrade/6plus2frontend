@@ -19,7 +19,8 @@ main{
   justify-content:center;
   flex-direction: column;
   gap: 3rem;
-  padding: 2rem 0.5rem;
+  padding: 2rem 0rem;
+  width: 100vw;
 }
 @media (min-width:600px) {
   main{
