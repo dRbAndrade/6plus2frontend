@@ -28,7 +28,7 @@ const Categories = () => {
   return(
     <>
       
-      <Container className="d-flex justify-content-between cardCategory">
+      <Container className="d-flex justify-content-center cardCategory">
       
       {sneakerCategories.map((category) => (
           <Card className="cardBody border-0">
