@@ -62,6 +62,7 @@ const Product  = ()=>{
 
     <>
       <Helmet><title>{`${product.title}`} | 6pluS2store</title></Helmet>
+      <div>
       <Header/>
       <main>
         <Container>
@@ -91,6 +92,8 @@ const Product  = ()=>{
           <ToggleText toggle={toggles[1]}></ToggleText>
         </Container>
       </main>
+      </div>
+      <footer></footer>
     </>
     )
 

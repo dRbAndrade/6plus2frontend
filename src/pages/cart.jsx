@@ -62,6 +62,7 @@ const Cart = ()=>{
   return(
     <>
       <Helmet><title>Carrinho | 6pluS2store</title></Helmet>
+      <div>
       <Header/>
       <main>
         <Container>
@@ -102,6 +103,7 @@ const Cart = ()=>{
         </Row>
         </Container>
       </main>
+      </div>
       <Footer/>
     </>
   );

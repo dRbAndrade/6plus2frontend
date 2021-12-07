@@ -65,24 +65,26 @@ const Products  = (props)=>{
   return(
     <>
       <Helmet><title>Products | 6pluS2store</title></Helmet>
-      <Header></Header>
-      <main>
-        <Row className="g-0">
-          <h1>Produtos</h1>
-        </Row>
-        <Row className="g-0">
-          <Col className="filters d-flex g-0">
-            <span className="filters-text">Filtros</span> 
-            <FilterDropdown param="categories" handleFilter={handleFilter}>Categoria</FilterDropdown>
-            <FilterDropdown param="productSizes" handleFilter={handleFilter}>Tamanho</FilterDropdown>
-          </Col>
-        </Row>
-        <Row className="products-container g-0">
-          {products.map((product) => (
-              <CardProduct key={product.id} handleButton={()=>{navigate(`/products/${product.id}`)}} product={product} buttonIcon={<BsChevronRight className="arrowRight"/>}></CardProduct>
-          ))}       
-        </Row>
-      </main>
+      <div>
+        <Header></Header>
+        <main>
+          <Row className="g-0 px-3">
+            <h1>Produtos</h1>
+          </Row>
+          <Row className="g-0 px-3">
+            <Col className="filters d-flex g-0">
+              <span className="filters-text">Filtros</span> 
+              <FilterDropdown param="categories" handleFilter={handleFilter}>Categoria</FilterDropdown>
+              <FilterDropdown param="productSizes" handleFilter={handleFilter}>Tamanho</FilterDropdown>
+            </Col>
+          </Row>
+          <Row className="products-container g-0 px-3">
+            {products.map((product) => (
+                <CardProduct key={product.id} handleButton={()=>{navigate(`/products/${product.id}`)}} product={product} buttonIcon={<BsChevronRight className="arrowRight"/>}></CardProduct>
+            ))}       
+          </Row>
+        </main>
+      </div>
       <Footer/>
     </>
   )
