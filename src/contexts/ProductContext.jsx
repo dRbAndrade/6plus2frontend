@@ -5,6 +5,7 @@ export const ProductContext = createContext();
 const ProductContextProvider = ({children})=>{
 
   const [products,setProducts] = useState([]);
+  const [categories,setCategories] = useState([]);
   const [productSizes,setProductSizes] = useState([]);
   const [fetch,setFetch] = useState(true)
 
@@ -16,13 +17,15 @@ const ProductContextProvider = ({children})=>{
         .then(response=>setProducts(response.data.content));
       axios.get('https://sixplustwostore.herokuapp.com/products/sizes')
         .then(response=>setProductSizes(response.data));
+      axios.get('https://sixplustwostore.herokuapp.com/categories')
+        .then(response=>setCategories(response.data.content));
       setFetch(false)
     }
     return clearInterval(fetchDaily)
   },[fetch,fetchDaily])
 
   return(
-    <ProductContext.Provider value={{products,setProducts,productSizes,setProductSizes}}>
+    <ProductContext.Provider value={{categories,products,productSizes}}>
       {children}
     </ProductContext.Provider>
   )

@@ -14,6 +14,7 @@ import Breadcrumb from "../components/breadcrumb"
 import { CartContext } from "../contexts/CartContext"
 import { useContext } from "react"
 import { ProductContext } from "../contexts/ProductContext"
+import Footer from "../components/footer"
 
 const Product  = ()=>{
  
@@ -60,7 +61,7 @@ const Product  = ()=>{
 
                   <span className="category">{view&&view.category}</span>
                   <Card.Title className="mb-3 g-0">{view&&view.title}</Card.Title>
-                  <Card.Subtitle className="pb-3 mb-4 g-0">{`R$ ${view&&view.price}`} <span>{`ou até 12x de R$ ${(view&&(view.price / 12).toFixed(2))} sem juros`}</span></Card.Subtitle>
+                  <Card.Subtitle className="pb-3 mb-4 g-0">{`R$ ${view&&view.price}`} <span>{`ou até 12x de R$ ${view&&(view.price / 12).toFixed(2)} sem juros`}</span></Card.Subtitle>
                   <Card.Text>Selecione o tamanho</Card.Text>
                 </Row>
                 <Row className="g-0 gap-3">
@@ -81,7 +82,7 @@ const Product  = ()=>{
         </Container>
       </main>
       </div>
-      <footer></footer>
+      <Footer></Footer>
     </>
     )
 }

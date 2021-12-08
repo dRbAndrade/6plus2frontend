@@ -21,15 +21,15 @@ const AboutUs  = ()=>{
       key:2,
       name:"Luiza Dragonetti",
       url:"https://bit.ly/3D9hlgt",
-      description:"DEPOIS EU FAÇO ISSO, ANDRADE",
+      description:"Apaixonada por tecnologia e design, atualmente estudante de programação.",
       linkedin:"https://www.linkedin.com/in/luizadragonetti",
       github:"https://github.com/lulutti"
     },
     {
       key:3,
-      name:"Flávio Malto",
+      name:"Flávio Malto de Oliveira",
       url:"https://bit.ly/31mFX88",
-      description:"Só sei que nada sei",
+      description:"Pai de menina, atleta nas horas vagas e apaixonado por tecnologia, interrompi a carreira de engenheiro para me dedicar à programação.",
       linkedin:"https://www.linkedin.com/in/flávio-malto-de-oliveira-03215a90/",
       github:"https://github.com/FlavioMalto"
     },
