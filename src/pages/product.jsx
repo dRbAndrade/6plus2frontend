@@ -30,7 +30,7 @@ const Product  = ()=>{
       [
         {
           title: "Descrição",
-          description: view.description
+          description: view&&view.description
         }, 
         {
           title: "Política de troca",
@@ -60,9 +60,8 @@ const Product  = ()=>{
 
                   <span className="category">{view&&view.category}</span>
                   <Card.Title className="mb-3 g-0">{view&&view.title}</Card.Title>
-                  <Card.Subtitle className="pb-3 mb-4 g-0">{`R$ ${view&&view.price}`} <span>{`ou até 12x de R$ ${(view&&view.price / 12)} sem juros`}</span></Card.Subtitle>
+                  <Card.Subtitle className="pb-3 mb-4 g-0">{`R$ ${view&&view.price}`} <span>{`ou até 12x de R$ ${(view&&view.price / 12).toFixed(2)} sem juros`}</span></Card.Subtitle>
                   <Card.Text>Selecione o tamanho</Card.Text>
-                  <Card.Text>{view&&view.description}</Card.Text>
                 </Row>
                 <Row className="g-0 gap-3">
                   <Row className="g-0"><ProductSizes id={id} productSizes={productSizes}/></Row>

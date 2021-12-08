@@ -5,9 +5,9 @@ import BannerHome from "../components/bannerHome"
 import BannerPromo from "../components/bannerPromo"
 import ButtonBlack from "../components/buttonBlack"
 import Categories from "../components/categories"
+import {Helmet} from "react-helmet"
 import Row from "react-bootstrap/Row"
 import Footer from "../components/footer"
-import {Helmet} from "react-helmet"
 
 const Home = () => { 
   const shouldCarrossel = window.innerWidth>600?true:false
