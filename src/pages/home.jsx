@@ -5,10 +5,8 @@ import BannerHome from "../components/bannerHome"
 import BannerPromo from "../components/bannerPromo"
 import ButtonBlack from "../components/buttonBlack"
 import Categories from "../components/categories"
-
-
+import {Helmet} from "react-helmet"
 import Row from "react-bootstrap/Row"
-import Helmet from 'react-helmet'
 import Footer from "../components/footer"
 
 
@@ -20,7 +18,7 @@ const Home = () => {
       <Helmet>
         <title>6pluS2store</title>
       </Helmet>
-      <Header></Header>
+      <Header/>
       
       <main>
         

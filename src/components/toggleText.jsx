@@ -13,11 +13,11 @@ const ToggleText = ({toggle})=>{
   const [show, setShow] = useState(false)
   return(
     <>
-    <Container className="toggler">
+    <Container className="toggler" onClick={() =>setShow(!show)}>
         <Row className="toggleShow justify-content-between">
           <Col className="d-flex align-items-center justify-content-between">
-            <h2 className="toggleTitle ">{toggle.title}</h2>
-            <button onClick={() =>setShow(!show)}> { show ? <BsDashLg /> : <BsPlusLg /> } </button>
+            <h2 className="toggleTitle" > {toggle&&toggle.title}</h2>
+            <button> { show ? <BsDashLg /> : <BsPlusLg /> } </button>
           </Col>
           
         </Row>

@@ -1,30 +1,35 @@
 .toggler {
   --toggler-multiplier:1;
-       border-bottom: 1px solid #1B1B1B;
        width: 77%;
        font-family: 'Roboto', sans-serif;
        > .toggleShow  {
-         padding: 0.6rem 1.8rem 0 1.8rem;
+         padding: 0.6rem 0rem 0 0rem;
               h2 {
                 display: inline;
-                font-weight: 700;
-                font-size: calc(var(--toggler-multiplier)*2.4rem);
+                font-weight: 500;
+                font-size: calc(var(--toggler-multiplier)*1.4rem);
                 margin: 0;
+                
+                
               }
               button {
                 height: 100%;
                 background: transparent;
               }
               svg{
-                font-size: calc(var(--toggler-multiplier)*2rem);
-                height: calc(var(--toggler-multiplier)*2rem);
+                font-size: calc(var(--toggler-multiplier)*1rem);
+                height: calc(var(--toggler-multiplier)*1rem);
               }
        }
        > .toggleDescription {
               font-weight: 400;
-              font-size: calc(var(--toggler-multiplier)*1.6rem);
-              margin: 1.2rem 3.6rem;
+              font-size: calc(var(--toggler-multiplier)*1.0rem);
+              margin: 1.2rem 0rem;
        }
+}
+
+.toggler:hover {
+    cursor:pointer;
 }
 
 .buttonShow {
@@ -37,7 +42,7 @@
   .toggler{
     --toggler-multiplier:1.6;
     .toggleShow{
-      padding: 1.2rem 3.6rem 0rem 3.6rem;
+      padding: 2.4rem 0rem 0rem 0rem;
     }
   }
 }

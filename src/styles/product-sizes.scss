@@ -1,0 +1,21 @@
+.sizes {
+  border-left: .1px solid #dadada; 
+}
+
+.product-size{
+  font-size: 1.4rem;
+  border: .1px solid #dadada;
+  padding: 1rem 2.5rem;
+  background-color: transparent;
+  border-left: none;
+}
+
+.product-size.selected{
+  background-color: #1b1b1b;
+  color:#fff;
+}
+
+:disabled {
+  color: #606060;
+  background-color: #dadada;
+}
