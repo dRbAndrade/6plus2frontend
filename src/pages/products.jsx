@@ -38,7 +38,7 @@ const Products  = (props)=>{
   },[search,products,productSizes])
 
   function handleFilter(param){
-    let url = window.location.href.replace("http://localhost:3000","")
+    let url = window.location.href.replace(/.*(?=\/products)/,"")
     param = param.replace("categories","category");
     param = param.replace("Sizes","Size");
     if(url.includes("category")&&param.includes("category")){
@@ -51,7 +51,7 @@ const Products  = (props)=>{
         }
       }
     }else if(url.includes("productSize")&&param.includes("productSize")){
-      url = url.replace(/productSize=[^a-zA-Z&]*(?=&)?/g,param)
+      url = url.replace(/productSize=[^a-zA-Z&]*/g,param)
       if(param.includes("productSize=reset")){
         url = url.replace("productSize=reset","")  
         url = url.replace("&","");
