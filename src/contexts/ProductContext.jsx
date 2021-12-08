@@ -12,9 +12,9 @@ const ProductContextProvider = ({children})=>{
 
   useEffect(()=>{
     if(fetch){
-      axios.get(`http://localhost:8080/products?size=100`)
+      axios.get(`http://sixplus2app-env.eba-k2uqnx2t.us-east-1.elasticbeanstalk.com/products?size=100`)
         .then(response=>setProducts(response.data.content));
-      axios.get('http://localhost:8080/products/sizes')
+      axios.get('http://sixplus2app-env.eba-k2uqnx2t.us-east-1.elasticbeanstalk.com/products/sizes')
         .then(response=>setProductSizes(response.data));
       setFetch(false)
     }

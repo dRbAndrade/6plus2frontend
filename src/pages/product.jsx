@@ -15,7 +15,6 @@ import { CartContext } from "../contexts/CartContext"
 import { useContext } from "react"
 import { ProductContext } from "../contexts/ProductContext"
 
-
 const Product  = ()=>{
  
   const [view,setView] = useState()
@@ -48,15 +47,21 @@ const Product  = ()=>{
       <Header/>
       <main>
         <Container>
-          <Breadcrumb names={["Produtos",(view&&view.title)]} links={["/products",`/products/${view&&view.id}`]}/>
-          <Row className="g-0 mb-5">
-            <Col className="d-flex g-0" md={{span:5,offset:1}} lg={{span:5,offset:1}}>
-              <Card className="product-info g-0 justify-content-between">
+          
+          <Row className="g-0 mb-5 d-flex justify-content-between">          
+            
+            <Col className="d-flex g-0 justify-content-start align-items-start" md={{span:6}} lg={{span:6}}>
+              <img className="product-image" src={view&&view.image} alt="Product" />
+            </Col>
+            <Col className="d-flex g-0" md={{span:5}} lg={{span:5}}>
+              <Card className="product-info g-0 justify-content-start">
+              <Breadcrumb names={["Produtos",(view&&view.title)]} links={["/products",`/products/${view&&view.id}`]}/>
                 <Row className="g-0">
-                  * * * * * 2 Availações (Ainda por implementar)
+
+                  <span className="category">{view&&view.category}</span>
                   <Card.Title className="mb-3 g-0">{view&&view.title}</Card.Title>
-                  <Card.Subtitle className="pb-3 mb-4 g-0">{`R$ ${view&&view.price}`}|<span className="text-muted">{`R$ ${view&&view.price}`}</span></Card.Subtitle>
-                  <Card.Text>{view&&view.description}</Card.Text>
+                  <Card.Subtitle className="pb-3 mb-4 g-0">{`R$ ${view&&view.price}`} <span>{`ou até 12x de R$ ${(view&&(view.price / 12).toFixed(2))} sem juros`}</span></Card.Subtitle>
+                  <Card.Text>Selecione o tamanho</Card.Text>
                 </Row>
                 <Row className="g-0 gap-3">
                   <Row className="g-0"><ProductSizes id={id} productSizes={productSizes}/></Row>
@@ -71,9 +76,6 @@ const Product  = ()=>{
                 </Row>
               </Card>
             </Col>
-            <Col className="d-flex g-0" md={{span:5,offset:1}} lg={{span:4,offset:1}}>
-              <img className="product-image" src={view&&view.image} alt="Product" />
-            </Col>
           </Row>
           
         </Container>
@@ -82,8 +84,8 @@ const Product  = ()=>{
       <footer></footer>
     </>
     )
-
 }
+
 
 export default Product;
 
