@@ -12,7 +12,6 @@ const BannerPromo = ({bannerImageUrl, bannerTitle, bannerSubtitle, children})=>{
                             <p>{bannerSubtitle}</p>
                             <ButtonBlack>Ver produtos</ButtonBlack>
                      </div>
-                     
               </Container>
        </>
        )

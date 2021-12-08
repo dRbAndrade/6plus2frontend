@@ -9,27 +9,22 @@ import '../styles/cart.scss'
 import {useEffect, useState } from 'react';
 import ButtonBlack from '../components/buttonBlack';
 import { BsChevronLeft } from "react-icons/bs";
-import axios from 'axios';
 import Swal from 'sweetalert2';
 import Footer from '../components/footer';
 import { Helmet } from 'react-helmet';
+import { useContext } from 'react';
+import { CartContext } from '../contexts/CartContext';
 
 const Cart = ()=>{
 
   const [total,setTotal] = useState(0);
-  const [products,setProducts] = useState([])
+  const {cartItems,removeItem} = useContext(CartContext)
   const navigate = useNavigate();
-  async function fetchProducts(){
-    let products = (await axios.get("http://localhost:8080/products")).data.content;
-    setProducts(products);
-  }
-  useEffect(()=>{
-    fetchProducts();
-  },[])
+    
 
   useEffect(()=>{
     updateTotal()
-  },[products])
+  },[cartItems])
 
   function handleSubmit(){
     Swal.fire({
@@ -42,14 +37,14 @@ const Cart = ()=>{
       </div>`,
       timer:2000
     })
+    cartItems.forEach(({product,chosenSize})=>{
+      removeItem(product.title+chosenSize)
+    })
     setTimeout(()=>{
       navigate("/");
     },2000)
   }
-  function remove(id){
-    const newArray = products.filter(e=>e.id!==id);
-    setProducts(newArray)
-  }
+
   function updateTotal(){
     const itemsPrices = document.querySelectorAll(".total-price");
     let subtotal = 0;
@@ -62,13 +57,14 @@ const Cart = ()=>{
   return(
     <>
       <Helmet><title>Carrinho | 6pluS2store</title></Helmet>
+      <div>
       <Header/>
       <main>
         <Container>
           <Row className="cart-header">
             <Col className="d-flex justify-content-between mb-5 g-0">
               <h1>Carrinho</h1>
-              <Link to="/products"> {<BsChevronLeft/>} Continuar comprando</Link>
+              <Link to="/cartItems"> {<BsChevronLeft/>} Continuar comprando</Link>
             </Col>
           </Row>
         <Row className="product-header g-2">
@@ -77,11 +73,11 @@ const Cart = ()=>{
             <Col className="d-flex justify-content-center" md={{span:2}}>Quantidade</Col>
             <Col className="d-flex justify-content-center" md={{span:2}}>Preço Total</Col>
         </Row>
-        <Row className="cart-products-container mb-5">
-          {products.map(product=>{
+        <Row className="cart-cartItems-container mb-5">
+          {cartItems.map(({product,chosenSize})=>{
             return(
-              <CartProduct key={product.id} product={product}
-              updateCart={updateTotal} remove={remove}/>
+              <CartProduct key={product.title+chosenSize} product={product} size={chosenSize}
+              updateCart={updateTotal} remove={removeItem}/>
             );
           })}
         </Row>
@@ -102,6 +98,7 @@ const Cart = ()=>{
         </Row>
         </Container>
       </main>
+      </div>
       <Footer/>
     </>
   );
