@@ -90,22 +90,24 @@ const AboutUs  = ()=>{
   return(
     <>
       <Helmet><title>Sobre nós | 6pluS2store</title></Helmet>
-      <Header/>
-      <main>
-        <Container>
-          <div className="card-container">
-          {developers.map(e=>{
-            return(
-              <AboutCard key={e.key} name={e.name} url={e.url} github={e.github}
-              description = {e.description} linkedin = {e.linkedin}></AboutCard>
-            )
-          })}
-          </div>
-          <ToggleText toggle={aboutText}/>
-          <ToggleText toggle={toolsText}/>
+      <div>
+        <Header/>
+        <main>
+          <Container>
+            <div className="card-container">
+            {developers.map(e=>{
+              return(
+                <AboutCard key={e.key} name={e.name} url={e.url} github={e.github}
+                description = {e.description} linkedin = {e.linkedin}></AboutCard>
+              )
+            })}
+            </div>
+            <ToggleText toggle={aboutText}/>
+            <ToggleText toggle={toolsText}/>
 
-        </Container>
-      </main>
+          </Container>
+        </main>
+      </div>
       <Footer/>
     </>
     )

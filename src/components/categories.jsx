@@ -31,12 +31,12 @@ const Categories = () => {
       <Container className="d-flex justify-content-center cardCategory">
       
       {sneakerCategories.map((category) => (
-          <Card className="cardBody border-0">
-          <Card.Img className="categoryImage" variant="top" src={category.url} />
-          <Card.Body className="buttonCategory p-0">
+          <Card key={category.name} className="cardBody border-0">
+            <Card.Img className="categoryImage" variant="top" src={category.url} />
+            <Card.Body className="buttonCategory p-0">
               <ButtonBlack style={{height: '4.8rem'}}buttonIcon={<BsChevronRight className="arrowRight" />}>{category.name}</ButtonBlack>
-          </Card.Body>
-        </Card>
+            </Card.Body>
+          </Card>
       ))}
       </Container>  
    </>

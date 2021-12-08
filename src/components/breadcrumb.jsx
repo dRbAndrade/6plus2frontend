@@ -4,7 +4,6 @@ import Col from "react-bootstrap/Col";
 import "../styles/breadcrumb.scss"
 
 const Breadcrumb = ({names,links})=>{
-
   
   return(
     <>
@@ -12,7 +11,7 @@ const Breadcrumb = ({names,links})=>{
       <Col>
         <Link to="/">Home</Link>
         {names.map((name,index)=>(
-          <Link to={links[index]}> / {name}</Link>
+          <Link key={name} to={links[index]}>{name}</Link>
         ))}
       </Col>
     </Row>

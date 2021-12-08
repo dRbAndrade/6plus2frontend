@@ -1,31 +1,34 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import '../styles/carrossel.scss'
 import CardProduct from './cardProduct'
-import axios from 'axios'
 import { useNavigate } from 'react-router'
 import {BsChevronRight} from 'react-icons/bs'
+import {ProductContext} from '../contexts/ProductContext'
+
 const Carrossel = () => {
 
-  const [productsPage1,setProductsPage1] = useState([])
-  const [productsPage2,setProductsPage2] = useState([])
+  const {products} = useContext(ProductContext);
+  const [view,setView] = useState();
   const navigate = useNavigate();
-  async function fetchProducts(setProducts, page){
-    let products = (await axios.get(`http://localhost:8080/products?size=3&page=${page}`)).data.content;
-    setProducts(products);
-  }
+
   useEffect(()=>{
-    fetchProducts(setProductsPage1,0);
-    fetchProducts(setProductsPage2,1);
-  },[])
+    if(products.length>0)
+      setView(
+        [
+          [products[0],products[1],products[2]],
+          [products[3],products[4],products[5]]
+        ]
+      )
+  },[products])
   return (
       <Carousel className="g-0" variant="dark">
 
         <Carousel.Item interval={6000}>
           <Row className="gap-5 g-0">
-            {productsPage1.map(product=>(
+            {view&&view[0].map(product=>(
               <Col className="d-flex g-0 justify-content-center" key={product.id}>
                 <CardProduct handleButton={()=>navigate(`/products/${product.id}`)}
                   product={product} buttonIcon={<BsChevronRight className="arrowRight"/>}/>
@@ -36,7 +39,7 @@ const Carrossel = () => {
 
         <Carousel.Item interval={6000}>
           <Row className="gap-5 g-0">
-            {productsPage2.map(product=>(
+            {view&&view[1].map(product=>(
               <Col className="d-flex g-0 justify-content-center" key={product.id}>
                 <CardProduct handleButton={()=>navigate(`/products/${product.id}`)}
                   product={product} buttonIcon={<BsChevronRight className="arrowRight"/>}/>

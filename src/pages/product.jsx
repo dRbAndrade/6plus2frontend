@@ -1,5 +1,4 @@
 import ToggleText from "../components/toggleText"
-import axios from "axios"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Header from "../components/header"
@@ -12,64 +11,37 @@ import Container from "react-bootstrap/Container"
 import ProductSizes from "../components/product-sizes"
 import { Helmet } from "react-helmet"
 import Breadcrumb from "../components/breadcrumb"
-import Footer from "../components/footer"
+import { CartContext } from "../contexts/CartContext"
+import { useContext } from "react"
+import { ProductContext } from "../contexts/ProductContext"
 
-import Swal from "sweetalert2"
-
+const toggles = [
+  {
+  title: "Descrição",
+  description: "Vai puxar do back"
+  },
+  {
+  title: "Política de troca",
+  description: "A 6pluS2store utiliza tecnologia de ponta para a fabricação de seus produtos, primando pela qualidade e satisfação de seus clientes. Pelo respeito e para que seja mantida a credibilidade conquistada junto aos seus consumidores, a empresa criou uma política de troca e devolução de acordo com o Código de Defesa do Consumidor, e preocupada para que você (cliente) obtenha uma negociação eficaz, ágil e principalmente satisfatória. Caso opte pelo contato via correio eletrônico ou telefônico, será encaminhado a você o formulário para preenchimento e envio junto à(s) peça(s). O produto devolvido sem esse formulário e/ou sem a comunicação ao SAC será reenviado sem consulta prévia. Ao efetuar o processo de devolução/troca o cliente deverá no verso da nota fiscal a ser devolvida/trocada, informar o motivo da devolução/troca, o nome de quem está devolvendo, CPF e a data da devolução."
+  }
+]
 
 
 const Product  = ()=>{
  
-  const [toggles,setToggles] = useState({}) 
-  const [product,setProduct] = useState({})
+  const [view,setView] = useState()
+  const {products,productSizes} = useContext(ProductContext);
   const {id} = useParams();
-  function addToCart(){
-    const chosenSize = document.querySelector(".product-size.selected").textContent;
-    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
-    if(!cartItems){
-      localStorage.setItem("cartItems",JSON.stringify([{"product":product,"size":chosenSize}]))
-    }else{
-      if(cartItems.filter(e=>{
-        return JSON.stringify(e.product)===JSON.stringify(product) && chosenSize===e.size
-      }).length>0){
-        Swal.fire({
-          icon:"info",
-          title:"Item já adicionado ao carrinho"
-        });
-      }else{
-        cartItems.push({"product":product,"size":chosenSize})
-        localStorage.setItem("cartItems",JSON.stringify(cartItems));
-      }
-      console.log(cartItems);
-    }
-  }
-  async function fetchProduct(id){
-    let product = (await axios.get(`http://localhost:8080/products/${id}`)).data;
-    setProduct(product);
-    return product;
-  }
+  const {addItem} = useContext(CartContext);
+
 
   useEffect(()=>{
-    fetchProduct(id).then(response => setToggles(
-        [
-          {
-            title: "Descrição",
-            description: response.description
-          }, 
-          {
-            title: "Política de troca",
-            description: "Nosso prazo para devolução ou troca é de até 30 dias da data de recebimento em seu local de entrega."
-          }
-      
-        ]
-    ));
-    
-  
-  },[id])
+    setView(products.filter(e=>e.id===parseInt(id))[0]);
+  },[id,products])
   return(
 
     <>
-      <Helmet><title>{`${product.title}`} | 6pluS2store</title></Helmet>
+      <Helmet><title>{`${view&&view.title}`} | 6pluS2store</title></Helmet>
       <div>
       <Header/>
       <main>
@@ -78,22 +50,23 @@ const Product  = ()=>{
           <Row className="g-0 mb-5 d-flex justify-content-between">          
             
             <Col className="d-flex g-0 justify-content-start align-items-start" md={{span:6}} lg={{span:6}}>
-              <img className="product-image" src={product.image} alt="Product" />
+              <img className="product-image" src={view&&view.image} alt="Product" />
             </Col>
             <Col className="d-flex g-0" md={{span:5}} lg={{span:5}}>
               <Card className="product-info g-0 justify-content-start">
-              <Breadcrumb names={["Produtos",product.title]} links={["/products",`/products/${product.id}`]}/>
+              <Breadcrumb names={["Produtos",(view&&view.title)]} links={["/products",`/products/${view&&view.id}`]}/>
                 <Row className="g-0">
 
-                  <span className="category">{product.category}</span>
-                  <Card.Title className="mb-3 g-0">{product.title}</Card.Title>
-                  <Card.Subtitle className="pb-3 mb-4 g-0">{`R$ ${product.price}`} <span>{`ou até 12x de R$ ${(product.price / 12).toFixed(2)} sem juros`}</span></Card.Subtitle>
+                  <span className="category">{view&&view.category}</span>
+                  <Card.Title className="mb-3 g-0">{view&&view.title}</Card.Title>
+                  <Card.Subtitle className="pb-3 mb-4 g-0">{`R$ ${view&&view.price}`} <span>{`ou até 12x de R$ ${(view&&view.price / 12)} sem juros`}</span></Card.Subtitle>
                   <Card.Text>Selecione o tamanho</Card.Text>
+                  <Card.Text>{view&&view.description}</Card.Text>
                 </Row>
                 <Row className="g-0 gap-3">
-                  <Row className="g-0"><ProductSizes product={product}/></Row>
+                  <Row className="g-0"><ProductSizes id={id} productSizes={productSizes}/></Row>
                   <Row className="g-0">
-                    <ButtonBlack handleSubmit={addToCart}>Adicionar ao carrinho</
+                    <ButtonBlack handleSubmit={()=>addItem(view)}>Adicionar ao carrinho</
                     ButtonBlack>
                   </Row>
                   <Row>
@@ -111,8 +84,8 @@ const Product  = ()=>{
       <footer></footer>
     </>
     )
-
 }
+
 
 export default Product;
 
