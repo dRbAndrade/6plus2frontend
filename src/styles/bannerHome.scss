@@ -1,76 +1,66 @@
 .banner {
-      display: flex;
-      flex-direction: column-reverse;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  width: 100%;
+  .bannerContent{
+    h1 {
+      font-size: 2.4rem;
+      
+      color: #1b1b1b;
+      margin-bottom: 0rem;
+    }
+    p {
+      font-size: 1.2rem
+    }
+    .buttonBanner {
       width: 100%;
-      .bannerContent{
-            h1 {
-                  font-size: 2.4rem;
-                  
-                  color: #1b1b1b;
-                  margin-bottom: 0rem;
-           }
-           p {
-                  font-size: 1.2rem
-           }
-           .buttonBanner {
-            width: 100%;
-            padding: 0;
-            height: 4.7rem;
-            }
-           
-      }
+      padding: 0;
+      height: 4.7rem;
+    }
+  }
 }
 
 .imgBox{
-      width: 100%;
-      min-height: 20rem;
-      max-height: 30rem;
-      background-image: url("https://i.imgur.com/LmbQjZk.png");
-      background-position: bottom;
-      background-repeat: no-repeat;
-      background-size: cover;
+  width: 100%;
+  min-height: 20rem;
+  max-height: 30rem;
+  background-image: url("https://i.imgur.com/LmbQjZk.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
 
-@media (min-width: 768px){
-      .banner {
-            flex-direction: row;
-            .bannerContent {     
-                  h1 {
-                        width: 42rem;
-                        font-size: 4.8rem;
-                        font-weight: 800;
-                        
-                  }
-                  p {
-                        width: 42rem;
-                        font-size: 1.6rem;
-                        margin-bottom: 2.4rem;
-                  }
-                  .buttonBanner {
-                        width: 42rem;
-                        padding: 0;
-                        height: 4.7rem;
-                  }
-                  
-            }
+@media (min-width: 600px){
+  .banner {
+    flex-direction: row;
+    .bannerContent {     
+      width: 45%;
+      h1 {
+        font-size: 3.8rem;
+        font-weight: 800;
+            
       }
-      
+      p {
+        font-size: 1.6rem;
+        margin-bottom: 2.4rem;
+      }
+      .buttonBanner {
+        padding: 0;
+        height: 4.7rem;
+      }   
+    }
+  }
 
-      .imgBox{
-            width: 40%;
-            min-height: 52rem;
-            max-height: 60rem;
-            background-image: url("https://i.imgur.com/LmbQjZk.png");
-            background-position: bottom;
-            background-repeat: no-repeat;
-            background-size: contain;
-      }
+  .imgBox{
+    width: 40%;
+    min-height: 52rem;
+    max-height: 60rem;
+    background-image: url("https://i.imgur.com/LmbQjZk.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 }
-
-
-
-
-
-
