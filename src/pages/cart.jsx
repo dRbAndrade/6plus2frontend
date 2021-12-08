@@ -9,7 +9,6 @@ import '../styles/cart.scss'
 import {useEffect, useState } from 'react';
 import ButtonBlack from '../components/buttonBlack';
 import { BsChevronLeft } from "react-icons/bs";
-import axios from 'axios';
 import Swal from 'sweetalert2';
 import Footer from '../components/footer';
 import { Helmet } from 'react-helmet';
@@ -19,12 +18,12 @@ const Cart = ()=>{
   const [total,setTotal] = useState(0);
   const [products,setProducts] = useState([])
   const navigate = useNavigate();
-  async function fetchProducts(){
-    let products = (await axios.get("http://localhost:8080/products")).data.content;
-    setProducts(products);
-  }
+    
+  
   useEffect(()=>{
-    fetchProducts();
+
+    setProducts(JSON.parse(localStorage.getItem("cartItems")));
+    
   },[])
 
   useEffect(()=>{
@@ -46,8 +45,9 @@ const Cart = ()=>{
       navigate("/");
     },2000)
   }
-  function remove(id){
-    const newArray = products.filter(e=>e.id!==id);
+  function remove(key){
+    const newArray = products.filter(e=>e.product.title+e.size!==key);
+    localStorage.setItem("cartItems",JSON.stringify(newArray))
     setProducts(newArray)
   }
   function updateTotal(){
@@ -62,6 +62,7 @@ const Cart = ()=>{
   return(
     <>
       <Helmet><title>Carrinho | 6pluS2store</title></Helmet>
+      <div>
       <Header/>
       <main>
         <Container>
@@ -78,9 +79,9 @@ const Cart = ()=>{
             <Col className="d-flex justify-content-center" md={{span:2}}>Preço Total</Col>
         </Row>
         <Row className="cart-products-container mb-5">
-          {products.map(product=>{
+          {products.map(({product,size})=>{
             return(
-              <CartProduct key={product.id} product={product}
+              <CartProduct key={product.title+size} product={product} size={size}
               updateCart={updateTotal} remove={remove}/>
             );
           })}
@@ -102,6 +103,7 @@ const Cart = ()=>{
         </Row>
         </Container>
       </main>
+      </div>
       <Footer/>
     </>
   );

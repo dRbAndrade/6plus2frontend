@@ -3,7 +3,6 @@ import axios from "axios"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Header from "../components/header"
-import Swal from "sweetalert2"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Card from "react-bootstrap/Card"
@@ -15,6 +14,7 @@ import { Helmet } from "react-helmet"
 import Breadcrumb from "../components/breadcrumb"
 import Footer from "../components/footer"
 
+import Swal from "sweetalert2"
 
 
 
@@ -24,10 +24,24 @@ const Product  = ()=>{
   const [product,setProduct] = useState({})
   const {id} = useParams();
   function addToCart(){
-    Swal.fire({
-      title:"Not implemented yet",
-      icon:"information"
-    })
+    const chosenSize = document.querySelector(".product-size.selected").textContent;
+    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    if(!cartItems){
+      localStorage.setItem("cartItems",JSON.stringify([{"product":product,"size":chosenSize}]))
+    }else{
+      if(cartItems.filter(e=>{
+        return JSON.stringify(e.product)===JSON.stringify(product) && chosenSize===e.size
+      }).length>0){
+        Swal.fire({
+          icon:"info",
+          title:"Item já adicionado ao carrinho"
+        });
+      }else{
+        cartItems.push({"product":product,"size":chosenSize})
+        localStorage.setItem("cartItems",JSON.stringify(cartItems));
+      }
+      console.log(cartItems);
+    }
   }
   async function fetchProduct(id){
     let product = (await axios.get(`http://localhost:8080/products/${id}`)).data;
@@ -56,6 +70,7 @@ const Product  = ()=>{
 
     <>
       <Helmet><title>{`${product.title}`} | 6pluS2store</title></Helmet>
+      <div>
       <Header/>
       <main>
         <Container>
@@ -92,7 +107,8 @@ const Product  = ()=>{
           
         </Container>
       </main>
-      <Footer></Footer>
+      </div>
+      <footer></footer>
     </>
     )
 

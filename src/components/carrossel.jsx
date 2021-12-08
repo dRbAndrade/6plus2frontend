@@ -21,10 +21,10 @@ const Carrossel = () => {
     fetchProducts(setProductsPage2,1);
   },[])
   return (
-      <Carousel variant="dark">
+      <Carousel className="g-0" variant="dark">
 
         <Carousel.Item interval={6000}>
-          <Row className="gap-5">
+          <Row className="gap-5 g-0">
             {productsPage1.map(product=>(
               <Col className="d-flex g-0 justify-content-center" key={product.id}>
                 <CardProduct handleButton={()=>navigate(`/products/${product.id}`)}
@@ -35,7 +35,7 @@ const Carrossel = () => {
         </Carousel.Item>
 
         <Carousel.Item interval={6000}>
-          <Row className="gap-5">
+          <Row className="gap-5 g-0">
             {productsPage2.map(product=>(
               <Col className="d-flex g-0 justify-content-center" key={product.id}>
                 <CardProduct handleButton={()=>navigate(`/products/${product.id}`)}

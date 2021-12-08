@@ -3,6 +3,9 @@ import { Link, NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import { useEffect, useState } from 'react';
 import ButtonBlack from './buttonBlack';
+import {BsCartFill} from 'react-icons/bs'
+import {BsList} from 'react-icons/bs'
+import {BsXLg} from 'react-icons/bs'
 
 
 const Header = ()=>{
@@ -48,11 +51,11 @@ const Header = ()=>{
       </div>
       <header className="header">
         <button className="menu collapsed" onClick={toggleMenu}>
-          <i className="icon-menu"></i>
+          <BsList/>
         </button>
         <Link to="/" className="logo">6pluS2store</Link>
         <nav className="navbar">
-          <button className="close" onClick={toggleMenu}><i className="icon-close"></i></button>
+          <button className="close" onClick={toggleMenu}><BsXLg/></button>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/products">Produtos</NavLink>
           <NavLink to="/about">Sobre</NavLink>
@@ -60,7 +63,7 @@ const Header = ()=>{
         <div className="button-container">
           <ButtonBlack buttonLink="/cart" handleSubmit={()=>navigate("/cart")} className="cart button">Carrinho</ButtonBlack>
         </div>
-        <Link to="/cart" className="cart icon collapsed"><i className="icon-cart"></i></Link>
+        <Link to="/cart" className="cart icon collapsed"><BsCartFill className=""/></Link>
       </header>
     </>
   )
