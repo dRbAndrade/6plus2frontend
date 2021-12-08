@@ -18,14 +18,16 @@ const ProductSizes = ({id,productSizes})=>{
     buttons.forEach(button=>button.classList.remove("selected"))
     targetButton.classList.toggle("selected")
   }
+
   return (
     <>
-    <Col className="g-0 d-flex justify-content-center">
+      <Col className="g-0 d-flex justify-content-start sizes">
       {sizes.map(size=>(
         <button key={size} id={size} onClick={handleButton} className="product-size">{size}</button>
       ))}
+      
     </Col>
-    <span>Tamanhos disponíveis</span>
+    <span>Guia de medidas</span>
     </>
   )
 

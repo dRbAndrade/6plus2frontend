@@ -1,23 +1,33 @@
 $product-multiplier:1;
 .product-image{
+  padding: 0;
   width: 100%;
+  object-fit: contain;
+  position: sticky;
+  top: 0px; 
 }
 .product-info.card{
   border:none;
   background-color: transparent;
+  span {
+    font-size: $product-multiplier*1.4rem;
+  }
   .card-title{
-    font-size: $product-multiplier*2.5rem;
+    font-size: $product-multiplier*3.2rem;
+    font-weight: 800;
   }
   .card-subtitle{
-    font-size: $product-multiplier*1.6rem;
+    font-size: $product-multiplier*2.4rem;
+    
     span{
-      font-size: $product-multiplier*1.2rem;
-      text-decoration: line-through;
+      font-size: $product-multiplier*1.4rem;
+      font-weight: 400;
     }
     border-bottom: 1px solid #000;
   }
   .card-text{
-    font-size: $product-multiplier*1.8rem;
+    font-size: $product-multiplier*1.6rem;
+    font-weight: 700;
   }
   width: 100%;
 }
