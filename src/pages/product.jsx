@@ -39,7 +39,7 @@ const Product  = ()=>{
         }
       ]
     )
-  },[id,products])
+  },[id,products, view])
   return(
 
     <>
