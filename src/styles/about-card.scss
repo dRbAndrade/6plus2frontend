@@ -7,15 +7,18 @@
   border:none;
   gap: 3rem;
   .card-text{
-    font-size: 1.6rem;
+    text-align: center;
+    font-size: 1.2rem;
   }
   .h5{
+    padding-top: 1.2rem;
     text-align: center;
     font-size: 2rem;
   }
   .card-img{
     width: 100%;
     aspect-ratio: 1;
+    object-fit: cover;
     clip-path: circle(50%);
   }
   
@@ -35,10 +38,10 @@
 @media (min-width:900px) {
   .card-container .about-card{
     .card-text{
-      font-size: 2rem;
+      font-size: 1.4rem;
     }
     .h5{
-      font-size: 3rem;
+      font-size: 2.4rem;
     }
   }
   

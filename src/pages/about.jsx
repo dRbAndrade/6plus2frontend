@@ -21,7 +21,7 @@ const AboutUs  = ()=>{
       key:2,
       name:"Luiza Dragonetti",
       url:"https://bit.ly/3D9hlgt",
-      description:"DEPOIS EU FAÇO ISSO, ANDRADE",
+      description:"Apaixonada por tecnologia e design, atualmente estudante de programação.",
       linkedin:"https://www.linkedin.com/in/luizadragonetti",
       github:"https://github.com/lulutti"
     },

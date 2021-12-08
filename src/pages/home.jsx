@@ -20,12 +20,12 @@ const Home = () => {
         <Header/>
         <main> 
           <BannerHome></BannerHome>
-          <h1 className="categoryTitle">Encontre seu estilo</h1>
+          
           <Categories></Categories>
           <BannerPromo bannerImageUrl="https://i.imgur.com/DK42azw.png" bannerTitle="Summer Vibes" bannerSubtitle="Confira nossa seleção para esportes de verão">
             <ButtonBlack>Ver produtos</ButtonBlack>
           </BannerPromo>
-          <h1 className="categoryTitle">Os mais vendidos</h1>
+          <h2 className="categoryTitle">Os mais vendidos</h2>
           {shouldCarrossel&&
             <Row className="p-0 g-0 d-flex justify-content-center">
               <Carrossel></Carrossel>
