@@ -1,0 +1,26 @@
+#root .measurement-modal{
+  display: none;
+  align-items:center;
+  justify-content:center;
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 80%;
+  height: 100%;
+  background-color: #fff;
+  color:#000;
+  z-index: 3;
+
+  .measurement-icon{
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+  }
+}
+
+#root .measurement-modal.show{
+  display: flex;
+  button{
+    background-color: transparent;
+  }
+}
