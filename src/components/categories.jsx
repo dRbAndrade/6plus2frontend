@@ -27,6 +27,9 @@ const Categories = () => {
 
   return(
     <>
+      <Container>
+      <h1 className="categoryTitle">Encontre seu estilo</h1>
+      </Container>
       
       <Container className="d-flex justify-content-center cardCategory">
       
