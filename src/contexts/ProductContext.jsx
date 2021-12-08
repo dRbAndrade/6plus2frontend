@@ -12,9 +12,9 @@ const ProductContextProvider = ({children})=>{
 
   useEffect(()=>{
     if(fetch){
-      axios.get(`https://sixplustwostore.herokuapp.com//products?size=100`)
+      axios.get(`https://sixplustwostore.herokuapp.com/products?size=100`)
         .then(response=>setProducts(response.data.content));
-      axios.get('https://sixplustwostore.herokuapp.com//products/sizes')
+      axios.get('https://sixplustwostore.herokuapp.com/products/sizes')
         .then(response=>setProductSizes(response.data));
       setFetch(false)
     }
