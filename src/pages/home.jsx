@@ -9,8 +9,8 @@ import Row from "react-bootstrap/Row"
 import Footer from "../components/footer"
 import {Helmet} from "react-helmet"
 
-const shouldCarrossel = window.innerWidth>600?true:false
 const Home = () => { 
+  const shouldCarrossel = window.innerWidth>600?true:false
   return(
     <>
       <Helmet>

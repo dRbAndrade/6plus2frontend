@@ -1,19 +1,16 @@
-import axios from "axios";
 import Col from "react-bootstrap/Col"
 import { useEffect, useState } from "react";
 import "../styles/product-sizes.scss"
 
-const ProductSizes = ({product})=>{
+const ProductSizes = ({id,productSizes})=>{
 
   const [sizes,setSizes] = useState([]);
 
   useEffect(()=>{
-    if(product.id)
-      axios.get(`http://localhost:8080/products/${product.id}/sizes`)
-        .then(response=>{
-          setSizes(response.data)
-        })
-  },[product])
+    console.log(id);
+    setSizes(productSizes.filter(e=>e.productId===parseInt(id)).map(e=>e.size))
+  },[id,productSizes])
+
   function handleButton(event){
     event.preventDefault();
     let buttons = document.querySelectorAll(".product-size");
@@ -26,7 +23,7 @@ const ProductSizes = ({product})=>{
     <>
     <Col className="g-0 d-flex justify-content-center">
       {sizes.map(size=>(
-        <button id={size} onClick={handleButton} className="product-size">{size}</button>
+        <button key={size} id={size} onClick={handleButton} className="product-size">{size}</button>
       ))}
     </Col>
     <span>Tamanhos disponíveis</span>

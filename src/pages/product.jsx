@@ -1,5 +1,4 @@
 import ToggleText from "../components/toggleText"
-import axios from "axios"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Header from "../components/header"
@@ -12,7 +11,9 @@ import Container from "react-bootstrap/Container"
 import ProductSizes from "../components/product-sizes"
 import { Helmet } from "react-helmet"
 import Breadcrumb from "../components/breadcrumb"
-import Swal from "sweetalert2"
+import { CartContext } from "../contexts/CartContext"
+import { useContext } from "react"
+import { ProductContext } from "../contexts/ProductContext"
 
 const toggles = [
   {
@@ -28,65 +29,44 @@ const toggles = [
 
 const Product  = ()=>{
  
-  const [product,setProduct] = useState({})
+  const [view,setView] = useState()
+  const {products,productSizes} = useContext(ProductContext);
   const {id} = useParams();
-  function addToCart(){
-    const chosenSize = document.querySelector(".product-size.selected").textContent;
-    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
-    if(!cartItems){
-      localStorage.setItem("cartItems",JSON.stringify([{"product":product,"size":chosenSize}]))
-    }else{
-      if(cartItems.filter(e=>{
-        return JSON.stringify(e.product)===JSON.stringify(product) && chosenSize===e.size
-      }).length>0){
-        Swal.fire({
-          icon:"info",
-          title:"Item já adicionado ao carrinho"
-        });
-      }else{
-        cartItems.push({"product":product,"size":chosenSize})
-        localStorage.setItem("cartItems",JSON.stringify(cartItems));
-      }
-      console.log(cartItems);
-    }
-  }
-  async function fetchProduct(id){
-    let product = (await axios.get(`http://localhost:8080/products/${id}`)).data;
-    setProduct(product);
-  }
+  const {addItem} = useContext(CartContext);
+
 
   useEffect(()=>{
-    fetchProduct(id);
-  },[id])
+    setView(products.filter(e=>e.id===parseInt(id))[0]);
+  },[id,products])
   return(
 
     <>
-      <Helmet><title>{`${product.title}`} | 6pluS2store</title></Helmet>
+      <Helmet><title>{`${view&&view.title}`} | 6pluS2store</title></Helmet>
       <div>
       <Header/>
       <main>
         <Container>
-          <Breadcrumb names={["Produtos",product.title]} links={["/products",`/products/${product.id}`]}/>
+          <Breadcrumb names={["Produtos",(view&&view.title)]} links={["/products",`/products/${view&&view.id}`]}/>
           <Row className="g-0 mb-5">
             <Col className="d-flex g-0" md={{span:5,offset:1}} lg={{span:5,offset:1}}>
               <Card className="product-info g-0 justify-content-between">
                 <Row className="g-0">
                   * * * * * 2 Availações (Ainda por implementar)
-                  <Card.Title className="mb-3 g-0">{product.title}</Card.Title>
-                  <Card.Subtitle className="pb-3 mb-4 g-0">{`R$ ${product.price}`}|<span className="text-muted">{`R$ ${product.price}`}</span></Card.Subtitle>
-                  <Card.Text>{product.description}</Card.Text>
+                  <Card.Title className="mb-3 g-0">{view&&view.title}</Card.Title>
+                  <Card.Subtitle className="pb-3 mb-4 g-0">{`R$ ${view&&view.price}`}|<span className="text-muted">{`R$ ${view&&view.price}`}</span></Card.Subtitle>
+                  <Card.Text>{view&&view.description}</Card.Text>
                 </Row>
                 <Row className="g-0 gap-3">
-                  <Row className="g-0"><ProductSizes product={product}/></Row>
+                  <Row className="g-0"><ProductSizes id={id} productSizes={productSizes}/></Row>
                   <Row className="g-0">
-                    <ButtonBlack handleSubmit={addToCart}>Adicionar ao carrinho</
+                    <ButtonBlack handleSubmit={()=>addItem(view)}>Adicionar ao carrinho</
                     ButtonBlack>
                   </Row>
                 </Row>
               </Card>
             </Col>
             <Col className="d-flex g-0" md={{span:5,offset:1}} lg={{span:4,offset:1}}>
-              <img className="product-image" src={product.image} alt="Product" />
+              <img className="product-image" src={view&&view.image} alt="Product" />
             </Col>
           </Row>
           <ToggleText toggle={toggles[1]}></ToggleText>
