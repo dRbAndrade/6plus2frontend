@@ -13,9 +13,17 @@ const ProductContextProvider = ({children})=>{
   useEffect(()=>{
     if(fetch){
       axios.get(`http://sixplus2app-env.eba-k2uqnx2t.us-east-1.elasticbeanstalk.com/products?size=100`)
-        .then(response=>setProducts(response.data.content));
-      axios.get('http://sixplus2app-env.eba-k2uqnx2t.us-east-1.elasticbeanstalk.com/products/sizes')
-        .then(response=>setProductSizes(response.data));
+        .then(response=>setProducts(response.data.content))
+        .catch(()=>{
+          axios.get(`http://sixplus2app-env.eba-k2uqnx2t.us-east-1.elasticbeanstalk.com/products?size=100`)
+            .then(response=>setProducts(response.data.content))
+        });
+        axios.get('http://sixplus2app-env.eba-k2uqnx2t.us-east-1.elasticbeanstalk.com/products/sizes')
+        .then(response=>setProductSizes(response.data))
+        .catch(()=>{
+          axios.get('http://sixplus2app-env.eba-k2uqnx2t.us-east-1.elasticbeanstalk.com/products/sizes')
+            .then(response=>setProducts(response.data))
+        });
       setFetch(false)
     }
     return clearInterval(fetchDaily)
