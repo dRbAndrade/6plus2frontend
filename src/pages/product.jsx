@@ -31,7 +31,7 @@ const Product  = ()=>{
       [
         {
           title: "Descrição",
-          description: view.description
+          description: view&&view.description
         }, 
         {
           title: "Política de troca",
