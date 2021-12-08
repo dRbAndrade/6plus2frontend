@@ -1,0 +1,21 @@
+table,
+td {
+  font-size: 1.2rem;
+  text-align: center;
+  border: 1px solid #1b1b1b;
+  padding: 1rem;
+}
+
+thead {
+  background-color: #1b1b1b;
+  color: #fff;
+  padding: 1rem;
+}
+
+th {
+  padding: 1rem;
+}
+
+.grey {
+  background-color: rgba(182, 179, 179, 0.795);
+}
