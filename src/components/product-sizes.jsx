@@ -7,7 +7,6 @@ const ProductSizes = ({id,productSizes})=>{
   const [sizes,setSizes] = useState([]);
 
   useEffect(()=>{
-    console.log(id);
     setSizes(productSizes.filter(e=>e.productId===parseInt(id)).map(e=>e.size))
   },[id,productSizes])
 
