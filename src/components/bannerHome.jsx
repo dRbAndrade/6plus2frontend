@@ -11,11 +11,11 @@ const BannerHome = ()=>{
         <Row className="banner g-0 d-flex justify-content-between">
           <Col sm={6} className="bannerContent d-flex flex-column justify-content-center align-items-center">
                 <h1>O parceiro do seu melhor movimento</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>Na 6pluS2store você encontra os melhores modelos das marcas mais inovadoras do mercado para que seu movimento nunca pare. Conheça nossa curadoria de produtos exclusivos e aproveite nossas ofertas.</p>
+              
                 <div className="buttonBanner"><ButtonBlack buttonLink="/products" handleSubmit={()=>navigate("/products")}>Ver produtos</ButtonBlack></div>                            
           </Col>
-          <Col sm={6} className="imgBox" style={
-            {backgroundImage: `url(https://i.imgur.com/jTtnqmB.png)`}}>
+          <Col sm={6} className="imgBox">
           </Col>               
         </Row>       
         </>

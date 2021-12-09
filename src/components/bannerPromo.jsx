@@ -8,7 +8,7 @@ const BannerPromo = ({bannerImageUrl, bannerTitle, bannerSubtitle, children})=>{
        return(
        <>
         <Container className="bannerPromo">
-          <div className="bannerPromoImg" style={{backgroundImage: `url(${bannerImageUrl})`}}></div>
+          <div className="bannerPromoImg" onClick={()=>navigate("/products")} style={{backgroundImage: `url(${bannerImageUrl})`}}></div>
           <div className="bannerPromoContent">
               <h1>{bannerTitle}</h1>
               <p>{bannerSubtitle}</p>

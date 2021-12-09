@@ -34,7 +34,7 @@ const CartProduct = ({product,updateCart,remove,size})=>{
           <Col className="align-items-center justify-content-center unit-value-cart ">R$ {price.toFixed(2)}</Col>
           <Col className="d-flex align-items-center justify-content-start">
             <button id="minus" onClick={updateQuantity}>—</button>
-            <span>{quantity} PAR</span>
+            <span>{quantity}</span>
             <button id="plus" onClick={updateQuantity}>+</button>
           </Col>
           
