@@ -41,7 +41,7 @@ const FilterDropdown = ({children,param,handleFilter})=>{
     <Dropdown.Menu>
         <Dropdown.Item key={0} eventKey={`${param}=reset`}>Resetar</Dropdown.Item>
       {menuItems.length>0&&menuItems.map(item=>{
-        return <Dropdown.Item key={item.id} eventKey={`${param}=${param==="categories"?item.name.toLowerCase():item}`}>{param==="categories"?item.name:item}</Dropdown.Item>
+        return <Dropdown.Item key={param==="categories"?item.name.toLowerCase():item} eventKey={`${param}=${param==="categories"?item.name.toLowerCase():item}`}>{param==="categories"?item.name:item}</Dropdown.Item>
       })}
     </Dropdown.Menu>
   </Dropdown>

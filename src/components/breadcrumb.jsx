@@ -10,9 +10,9 @@ const Breadcrumb = ({names,links})=>{
     <Row className="g-0 breadcrumb">
       <Col>
         <Link to="/">Home</Link>
-        {names.map((name,index)=>(
-          <Link key={name} to={links[index]}> / {name}</Link>
-        ))}
+        {names&&names.map((name,index)=>{
+        return <Link key={name?name:index} to={links[index]}> / {name}</Link>
+        })}
       </Col>
     </Row>
     </>

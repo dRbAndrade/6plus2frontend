@@ -45,7 +45,6 @@ const Categories = () => {
       <Container className="d-flex justify-content-center cardCategory">
       
       {sneakerCategories.map((category) => (
-          <>
           <Card key={category.name} onClick={()=>navigate(`/products?category=${category.url}`)} className="cardBody border-0">
             <Card.Img className="categoryImage" variant="top" src={category.image} />
             <Card.Body className="buttonCategories p-0">
@@ -57,13 +56,8 @@ const Categories = () => {
               handleSubmit={()=>navigate(`/products?category=${category.url}`)} className="buttonCategoryBlack" buttonIcon={<BsChevronRight className="arrowRight" />}>{category.name}</ButtonBlack>
             </Card.Body>
           </Card>
-          
-         
-          
-          </>
       ))}
       </Container>
-      {console.log(buttonCategory)}  
    </>
   )
 
