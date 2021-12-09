@@ -11,7 +11,7 @@ const Breadcrumb = ({names,links})=>{
       <Col>
         <Link to="/">Home</Link>
         {names.map((name,index)=>(
-          <Link key={name} to={links[index]}>{name}</Link>
+          <Link key={name} to={links[index]}> / {name}</Link>
         ))}
       </Col>
     </Row>

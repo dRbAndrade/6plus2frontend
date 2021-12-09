@@ -78,7 +78,7 @@ const AboutUs  = ()=>{
   const aboutText = {
 
     title:"Sobre o projeto",
-    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus, sit. Similique dignissimos sed ea incidunt nisi! Eius mollitia fugit, praesentium non doloribus laboriosam vel expedita recusandae, saepe dignissimos eligendi minus.",
+    description: "E-commerce desenvolvido para o projeto final integrador do 3º bimestre do curso Certified Tech Developer oferecido pela Digital House em parceria com a Globant e Mercado Livre.",
 
   }
 
