@@ -36,10 +36,6 @@ for(let i = 0; i < buttonCategory.length; i++) {
 
 const Categories = () => {
   const navigate = useNavigate();
-  const width = window.innerWidth;
-  let buttonCard = false;
-  if(width<600)buttonCard = true;
-
   return(
     <>
       <Container>
