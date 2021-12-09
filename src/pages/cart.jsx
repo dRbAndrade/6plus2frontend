@@ -60,26 +60,38 @@ const Cart = ()=>{
       <div>
       <Header/>
       <main>
-        <Container>
-          <Row className="cart-header">
-            <Col className="d-flex justify-content-between mb-5 g-0">
-              <h1>Carrinho</h1>
-              <Link to="/cartItems"> {<BsChevronLeft/>} Continuar comprando</Link>
-            </Col>
-          </Row>
-        <Row className="product-header g-2">
-            <Col md={{span:4}}>Produto</Col>
-            <Col className="d-flex justify-content-center" md={{span:2}}>Preço</Col>
-            <Col className="d-flex justify-content-center" md={{span:2}}>Quantidade</Col>
-            <Col className="d-flex justify-content-center" md={{span:2}}>Preço Total</Col>
-        </Row>
+        <Container className="cart-c">
+            <Row className="cart-header">
+              <Col className="cart-header-col d-flex mb-5 g-0">
+                <h1>Carrinho</h1>
+                <Link to="/products"> {<BsChevronLeft/>} Continuar comprando</Link>
+              </Col>
+            </Row>
+            {cartItems.length === 0 &&
+            <Row className="g-0 d-flex flex-column justify-content-between align-items-center emptyCart">
+              <img className="w-1" src="https://i.imgur.com/uECpUhE.png" alt="Carrinho vazio" />
+              <h3>Nenhum produto adicionado</h3>
+              <Link to="/products"> Ver produtos </Link>
+            </Row>
+          }
+          {cartItems.length > 0 &&
+           <>
+            <Row className="product-header g-2">
+                <Col md={{span:4}}>Produto</Col>
+                <Col className="d-flex justify-content-center" md={{span:2}}>Preço</Col>
+                <Col className="d-flex justify-content-center" md={{span:2}}>Quantidade</Col>
+                <Col className="d-flex justify-content-center" md={{span:2}}>Preço Total</Col>
+            </Row>
         <Row className="cart-cartItems-container mb-5">
+          {console.log(cartItems)}
           {cartItems.map(({product,chosenSize})=>{
+            
             return(
               <CartProduct key={product.title+chosenSize} product={product} size={chosenSize}
               updateCart={updateTotal} remove={removeItem}/>
             );
           })}
+          
         </Row>
         <Row className="totals-container">
           <Col xs={12} sm={{span:8,offset:2}} md={{span:5,offset:7}} lg={{span:4,offset:8}} >
@@ -96,6 +108,8 @@ const Cart = ()=>{
             </Row>
           </Col>
         </Row>
+        </>
+        }
         </Container>
       </main>
       </div>

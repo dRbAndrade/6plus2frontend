@@ -6,12 +6,28 @@
 }
 
 .products-container.row{
-  --columns:auto-fit;
+  --columns:1;
   display: grid;
   grid-template-columns: repeat(var(--columns),minmax(min(100%,200px),1fr) );
   place-items: center;
   gap: 2rem;
 }
+
+
+@media (min-width:400px) {
+  .products-container.row{
+    --columns:2
+  }
+  
+}
+
+@media (min-width:600px) {
+  .products-container.row{
+    --columns:3
+  }
+  
+}
+
 @media (min-width:1200px) {
   .products-container.row{
     --columns:4
