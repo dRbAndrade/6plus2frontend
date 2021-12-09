@@ -17,25 +17,25 @@ const MeasurementGuide = ()=>{
       <table>
       <thead>
         <tr>
-          <th colspan="6">Guia de Medidas</th>
+          <th colSpan="6">Guia de Medidas</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>34</td>
-          <td class="grey">36</td>
+          <td className="grey">36</td>
           <td>38</td>
-          <td class="grey">40</td>
+          <td className="grey">40</td>
           <td>42</td>
-          <td class="grey">44</td>
+          <td className="grey">44</td>
         </tr>
         <tr>
           <td>22.5 cm</td>
-          <td class="grey">23.5 cm</td>
+          <td className="grey">23.5 cm</td>
           <td>24.5 cm</td>
-          <td class="grey">26 cm</td>
+          <td className="grey">26 cm</td>
           <td>27 cm</td>
-          <td class="grey">28 cm</td>
+          <td className="grey">28 cm</td>
         </tr>
       </tbody>
     </table>

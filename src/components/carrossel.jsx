@@ -35,8 +35,8 @@ const Carrossel = ({pages}) => {
 
     <> 
       <Carousel className="g-0" variant="dark">
-        {view&&view.map(e=>(
-          <Carousel.Item interval={6000}>
+        {view&&view.map((e,indx)=>(
+          <Carousel.Item key={indx}interval={6000}>
             <Row className="gap-5 g-0">
               {e&&e.map(product=>(
                 <Col className="d-flex g-0 justify-content-center" key={product.id}>
