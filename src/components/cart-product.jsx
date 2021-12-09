@@ -22,8 +22,10 @@ const CartProduct = ({product,updateCart,remove,size})=>{
   }
   return(
     <Row className="product-row d-flex g-0 py-5">
-      <Col xs={6} md={3} className="d-flex pl-10 align-items-center justify-content-start"><img src={image} alt="Product"/></Col>
-      <Col xs={6} md={9} className="d-flex p-10 flex-row align-items-center justify-content-between ">
+      <Col xs={6} md={3} className="d-flex pl-10 align-items-center justify-content-start">
+        <img src={image} alt="Product"/>
+      </Col>
+      <Col xs={{span:5,offset:1}} sm={{span:6,offset:0}} md={9} className="d-flex p-10 flex-row align-items-center justify-content-between ">
         <Row className="g-0 d-flex h-100 info-product-cart">
           <Col>
             <p className="cart-title">{title}</p>

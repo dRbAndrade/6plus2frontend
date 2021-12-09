@@ -84,10 +84,8 @@ const Cart = ()=>{
                     <Col md={4}className="d-flex">Preço Total</Col>
                 </Col>
             </Row>
-        <Row className="cart-cartItems-container mb-5">
-          {console.log(cartItems)}
+        <Row className="cart-items mb-5 px-3">
           {cartItems.map(({product,chosenSize})=>{
-            
             return(
               <CartProduct key={product.title+chosenSize} product={product} size={chosenSize}
               updateCart={updateTotal} remove={removeItem}/>
@@ -95,17 +93,17 @@ const Cart = ()=>{
           })}
           
         </Row>
-        <Row className="totals-container">
+        <Row className="totals-container g-0">
           <Col xs={12} sm={{span:8,offset:2}} md={{span:5,offset:7}} lg={{span:4,offset:8}} >
-            <Row className="subtotal py-3 mb-4">
+            <Row className="subtotal py-3 mb-4 g-0">
               <Col>Subtotal</Col>
               <Col className="d-flex justify-content-end">R$ {total.toFixed(2)}</Col>
             </Row>
-            <Row className="total mb-5">
+            <Row className="total mb-5 g-0">
               <Col>Total</Col>
               <Col className="d-flex justify-content-end">R$ {total.toFixed(2)}</Col>
             </Row>
-            <Row>
+            <Row className="g-0">
               <ButtonBlack handleSubmit={handleSubmit}>Fechar Pedido</ButtonBlack>
             </Row>
           </Col>
