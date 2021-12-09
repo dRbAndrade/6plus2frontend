@@ -8,9 +8,10 @@ import Categories from "../components/categories"
 import {Helmet} from "react-helmet"
 import Row from "react-bootstrap/Row"
 import Footer from "../components/footer"
+import { useNavigate } from 'react-router';
 
 const Home = () => { 
-
+  const navigate = useNavigate();
   const width = window.innerWidth;
   let carrosselPages = 6;
 
@@ -28,7 +29,7 @@ const Home = () => {
           <BannerHome></BannerHome>
           <Categories></Categories>
           <BannerPromo bannerImageUrl="https://i.imgur.com/DK42azw.png" bannerTitle="Summer Vibes" bannerSubtitle="Confira nossa seleção para esportes de verão">
-            <ButtonBlack>Ver produtos</ButtonBlack>
+          <ButtonBlack handleSubmit={()=>navigate("/products")}>Ver produtos</ButtonBlack>
           </BannerPromo>
             <Row className="p-3 g-0 d-flex justify-content-center">
               <h2 className="categoryTitle">Os mais vendidos</h2>

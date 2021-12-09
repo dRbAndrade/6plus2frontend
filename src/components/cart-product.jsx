@@ -2,9 +2,6 @@ import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 import "../styles/cart-product.scss"
 import { useEffect, useState } from "react";
-import { BsFillPlusCircleFill } from "react-icons/bs";
-import { BsFillDashCircleFill } from "react-icons/bs";
-
 
 const CartProduct = ({product,updateCart,remove,size})=>{
 
@@ -34,9 +31,9 @@ const CartProduct = ({product,updateCart,remove,size})=>{
           </Col>
           <Col className="align-items-center justify-content-center unit-value-cart ">R$ {price.toFixed(2)}</Col>
           <Col className="d-flex align-items-center justify-content-start">
-            <button id="minus" onClick={updateQuantity}><BsFillDashCircleFill /></button>
+            <button id="minus" onClick={updateQuantity}>—</button>
             <span>{quantity} PAR</span>
-            <button id="plus" onClick={updateQuantity}><BsFillPlusCircleFill /></button>
+            <button id="plus" onClick={updateQuantity}>+</button>
           </Col>
           
           <Col className=" d-flex align-items-center justify-content-start total-price">R$ {totalPrice.toFixed(2)}</Col>
