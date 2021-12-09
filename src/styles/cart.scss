@@ -1,4 +1,4 @@
-$cart-multiplier:2;
+$cart-multiplier:1;
 .cart-c {
   .cart-header{
     .cart-header-col {
@@ -62,7 +62,8 @@ $cart-multiplier:2;
   
 }
 
-@media (min-width:900px) {
+@media (min-width:768px) {
+  $cart-multiplier:1.8;
   .cart-c {
   .cart-header {
     .cart-header-col {
@@ -77,12 +78,16 @@ $cart-multiplier:2;
     padding: 1rem;
     font-size: $cart-multiplier*1rem;
     display: flex;
+    div:nth-of-type(2){
+      margin-left: -0.5rem;
+      margin-right: 2rem;
+    }
   }
   .cart-header{
     flex-direction: row;
     h1{
       position: relative;
-      left:-3rem
+      left:-2rem
     }
   }
   

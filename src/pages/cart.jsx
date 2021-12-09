@@ -77,10 +77,12 @@ const Cart = ()=>{
           {cartItems.length > 0 &&
            <>
             <Row className="product-header g-2">
-                <Col md={{span:4}}>Produto</Col>
-                <Col className="d-flex justify-content-center" md={{span:2}}>Preço</Col>
-                <Col className="d-flex justify-content-center" md={{span:2}}>Quantidade</Col>
-                <Col className="d-flex justify-content-center" md={{span:2}}>Preço Total</Col>
+                <Col md={5} className="d-flex">Produto</Col>
+                <Col className="d-flex g-0">
+                    <Col md={3}className="d-flex justify-content-center">Preço</Col>
+                    <Col md={3}className="d-flex">Quantidade</Col>
+                    <Col md={4}className="d-flex">Preço Total</Col>
+                </Col>
             </Row>
         <Row className="cart-cartItems-container mb-5">
           {console.log(cartItems)}

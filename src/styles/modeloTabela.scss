@@ -3,7 +3,7 @@ td {
   font-size: 1.2rem;
   text-align: center;
   border: 1px solid #1b1b1b;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 thead {
@@ -19,4 +19,12 @@ th {
 
 .grey {
   background-color: rgba(182, 179, 179, 0.795);
+}
+
+@media (min-width:300px) {
+  
+  table,
+  td {
+    padding: 1rem;
+  }
 }
