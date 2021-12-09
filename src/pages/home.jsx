@@ -10,7 +10,13 @@ import Row from "react-bootstrap/Row"
 import Footer from "../components/footer"
 
 const Home = () => { 
-  const shouldCarrossel = window.innerWidth>600?true:false
+
+  const width = window.innerWidth;
+  let carrosselPages = 6;
+
+  if(width>600)carrosselPages = 3;
+  if(width>900)carrosselPages = 2;
+
   return(
     <>
       <Helmet>
@@ -20,17 +26,14 @@ const Home = () => {
         <Header/>
         <main> 
           <BannerHome></BannerHome>
-          
           <Categories></Categories>
           <BannerPromo bannerImageUrl="https://i.imgur.com/DK42azw.png" bannerTitle="Summer Vibes" bannerSubtitle="Confira nossa seleção para esportes de verão">
             <ButtonBlack>Ver produtos</ButtonBlack>
           </BannerPromo>
-          <h2 className="categoryTitle">Os mais vendidos</h2>
-          {shouldCarrossel&&
-            <Row className="p-0 g-0 d-flex justify-content-center">
-              <Carrossel></Carrossel>
+            <Row className="p-3 g-0 d-flex justify-content-center">
+              <h2 className="categoryTitle">Os mais vendidos</h2>
+              <Carrossel pages={carrosselPages}></Carrossel>
             </Row>
-          }
         </main>
       </div>
       <Footer></Footer>

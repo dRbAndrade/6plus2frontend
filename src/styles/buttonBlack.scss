@@ -1,34 +1,44 @@
 .buttonBlack {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    font-size: 1.6rem;
-    font-weight: 500;
-    text-align: center;
-    padding: 1rem;
-    border: none;
-    background-color: #1b1b1b;
-    color: #fff;
-    a{
-      color: #fff;
-      background: transparent;
-      text-decoration: none;
-    }
-}
-
-.arrowRight {
-  width: 2rem;
-  height: 2rem;
-  stroke-width: 1;
-  path{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 1rem;
+  border: none;
+  background-color: #1b1b1b;
+  color: #fff;
+  a {
     color: #fff;
     background: transparent;
     text-decoration: none;
   }
 }
 
-.plus{
+.buttonBlack:hover {
+  background-color: #1b1b1b;
+  color: rgb(151, 149, 149);
+  path {
+    color: rgb(151, 149, 149);
+    background: transparent;
+    text-decoration: none;
+  }
+}
+
+.arrowRight {
+  width: 2rem;
+  height: 2rem;
+  stroke-width: 1;
+  path {
+    color: #fff;
+    background: transparent;
+    text-decoration: none;
+  }
+}
+
+.plus {
   width: 1.6rem;
   height: 1.6rem;
   margin-left: 1rem;
