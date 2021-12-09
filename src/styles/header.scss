@@ -26,6 +26,13 @@
     border: none;
     background-color: transparent;
     font-size: 2rem;
+    a{
+      text-decoration: none;
+      color: #000;
+      :hover{
+       color: #9ADDB7;
+      }
+    }
   }
   .logo{
     font-size: 2rem;
@@ -34,6 +41,9 @@
   a{
     text-decoration: none;
     color: #000;
+    :hover{
+     color: #9ADDB7;
+    }
   }
   
   .navbar{
@@ -77,14 +87,7 @@
     width: 100%;
     height: 100%;
   }
-  .cart.button{
-    display: none;
-    background-color: #000;
-    color: #fff;
-    height: 100%;
-    font-size: 1.6rem;
-    padding: 1% 3%;
-  }
+
   .cart.button.collapsed{
     display: inline;
   }

@@ -4,7 +4,14 @@ export const cartReducer = (state,action) =>{
   const key = action.payload;
   switch (action.type){
     case 'ADD_ITEM':
-      const chosenSize = document.querySelector(".product-size.selected").textContent;
+      let chosenSize = document.querySelector(".product-size.selected");
+      if(!chosenSize){
+        Swal.fire({
+          icon:"error",
+          title:"Escolha um tamanho"
+        });
+        return state;
+      }else chosenSize = chosenSize.textContent;
       if(state.filter(e=>{
         return JSON.stringify(e.product)===JSON.stringify(product) && chosenSize===e.chosenSize
       }).length>0){

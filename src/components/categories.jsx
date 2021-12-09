@@ -2,28 +2,43 @@ import Card from "react-bootstrap/Card"
 import ButtonBlack from "../components/buttonBlack"
 import {BsChevronRight} from 'react-icons/bs'
 import Container from "react-bootstrap/Container"
+import { useNavigate } from 'react-router';
 import "../styles/categories.scss"
 
 const sneakerCategories = [
   {
     name: "Street",
-    url: "https://i.imgur.com/b1m2xqI.png"
+    image: "https://i.imgur.com/b1m2xqI.png",
+    url: 'casual'
   },
   {
     name: "Corrida",
-    url: "https://i.imgur.com/mgVLtEL.png"
+    image: "https://i.imgur.com/mgVLtEL.png",
+    url: 'corrida'
   },
   {
     name: "Skate",
-    url: "https://i.imgur.com/uimEu3T.png"
+    image: "https://i.imgur.com/uimEu3T.png",
+    url: 'skate'
   },
   {
     name: "Trail",
-    url: "https://i.imgur.com/ekhpznY.png"
+    image: "https://i.imgur.com/ekhpznY.png",
+    url: 'aventura'
   },
 ]
 
+const buttonCategory = document.querySelectorAll(".buttonCategory");
+
+for(let i = 0; i < buttonCategory.length; i++) {
+  buttonCategory[i].style.backgroundImage = `url${sneakerCategories[i].image}`
+}
+
 const Categories = () => {
+  const navigate = useNavigate();
+  const width = window.innerWidth;
+  let buttonCard = false;
+  if(width<600)buttonCard = true;
 
   return(
     <>
@@ -34,14 +49,25 @@ const Categories = () => {
       <Container className="d-flex justify-content-center cardCategory">
       
       {sneakerCategories.map((category) => (
-          <Card key={category.name} className="cardBody border-0">
-            <Card.Img className="categoryImage" variant="top" src={category.url} />
-            <Card.Body className="buttonCategory p-0">
-              <ButtonBlack style={{height: '4.8rem'}}buttonIcon={<BsChevronRight className="arrowRight" />}>{category.name}</ButtonBlack>
+          <>
+          <Card key={category.name} onClick={()=>navigate(`/products?category=${category.url}`)} className="cardBody border-0">
+            <Card.Img className="categoryImage" variant="top" src={category.image} />
+            <Card.Body className="buttonCategories p-0">
+              
+               <ButtonBlack 
+               handleSubmit={()=>navigate(`/products?category=${category.url}`)} className="buttonCategory" style={{backgroundImage: `url("${category.image}")`}}><span>{category.name}</span></ButtonBlack>
+             
+              <ButtonBlack 
+              handleSubmit={()=>navigate(`/products?category=${category.url}`)} className="buttonCategoryBlack" buttonIcon={<BsChevronRight className="arrowRight" />}>{category.name}</ButtonBlack>
             </Card.Body>
           </Card>
+          
+         
+          
+          </>
       ))}
-      </Container>  
+      </Container>
+      {console.log(buttonCategory)}  
    </>
   )
 

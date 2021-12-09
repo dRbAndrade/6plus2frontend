@@ -60,42 +60,56 @@ const Cart = ()=>{
       <div>
       <Header/>
       <main>
-        <Container>
-          <Row className="cart-header">
-            <Col className="d-flex justify-content-between mb-5 g-0">
-              <h1>Carrinho</h1>
-              <Link to="/cartItems"> {<BsChevronLeft/>} Continuar comprando</Link>
-            </Col>
-          </Row>
-        <Row className="product-header g-2">
-            <Col md={{span:4}}>Produto</Col>
-            <Col className="d-flex justify-content-center" md={{span:2}}>Preço</Col>
-            <Col className="d-flex justify-content-center" md={{span:2}}>Quantidade</Col>
-            <Col className="d-flex justify-content-center" md={{span:2}}>Preço Total</Col>
-        </Row>
-        <Row className="cart-cartItems-container mb-5">
+        <Container className="cart-c">
+            <Row className="cart-header">
+              <Col className="cart-header-col d-flex mb-5 g-0">
+                <h1>Carrinho</h1>
+                <Link to="/products"> {<BsChevronLeft/>} Continuar comprando</Link>
+              </Col>
+            </Row>
+            {cartItems.length === 0 &&
+            <Row className="g-0 d-flex flex-column justify-content-between align-items-center emptyCart">
+              <img className="w-1" src="https://i.imgur.com/uECpUhE.png" alt="Carrinho vazio" />
+              <h3>Nenhum produto adicionado</h3>
+              <Link to="/products"> Ver produtos </Link>
+            </Row>
+          }
+          {cartItems.length > 0 &&
+           <>
+            <Row className="product-header g-2">
+                <Col md={5} className="d-flex">Produto</Col>
+                <Col className="d-flex g-0">
+                    <Col md={3}className="d-flex justify-content-center">Preço</Col>
+                    <Col md={3}className="d-flex">Quantidade</Col>
+                    <Col md={4}className="d-flex">Preço Total</Col>
+                </Col>
+            </Row>
+        <Row className="cart-items mb-5 px-3">
           {cartItems.map(({product,chosenSize})=>{
             return(
               <CartProduct key={product.title+chosenSize} product={product} size={chosenSize}
               updateCart={updateTotal} remove={removeItem}/>
             );
           })}
+          
         </Row>
-        <Row className="totals-container">
+        <Row className="totals-container g-0">
           <Col xs={12} sm={{span:8,offset:2}} md={{span:5,offset:7}} lg={{span:4,offset:8}} >
-            <Row className="subtotal py-3 mb-4">
+            <Row className="subtotal py-3 mb-4 g-0">
               <Col>Subtotal</Col>
               <Col className="d-flex justify-content-end">R$ {total.toFixed(2)}</Col>
             </Row>
-            <Row className="total mb-5">
+            <Row className="total mb-5 g-0">
               <Col>Total</Col>
               <Col className="d-flex justify-content-end">R$ {total.toFixed(2)}</Col>
             </Row>
-            <Row>
+            <Row className="g-0">
               <ButtonBlack handleSubmit={handleSubmit}>Fechar Pedido</ButtonBlack>
             </Row>
           </Col>
         </Row>
+        </>
+        }
         </Container>
       </main>
       </div>

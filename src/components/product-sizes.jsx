@@ -1,7 +1,6 @@
 import Col from "react-bootstrap/Col"
 import { useEffect, useState } from "react";
 import "../styles/product-sizes.scss"
-
 const ProductSizes = ({id,productSizes})=>{
 
   const [sizes,setSizes] = useState([]);
@@ -18,7 +17,10 @@ const ProductSizes = ({id,productSizes})=>{
     buttons.forEach(button=>button.classList.remove("selected"))
     targetButton.classList.toggle("selected")
   }
-
+  function showModal(){
+    document.querySelector(".measurement-modal").classList.toggle("show");
+    document.querySelector(".fade-mask").classList.toggle("show")
+  }
   return (
     <>
       <Col className="g-0 d-flex justify-content-start sizes">
@@ -27,7 +29,7 @@ const ProductSizes = ({id,productSizes})=>{
       ))}
       
     </Col>
-    <span>Guia de medidas</span>
+    <button onClick={showModal} className="measurements">Guia de medidas</button>
     </>
   )
 

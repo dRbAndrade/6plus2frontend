@@ -15,9 +15,10 @@
       color: black;
       align-items: center;
 
-      .bs-icon{
+      bs-icon{
           width: 10px;
           height: 10px;
+          padding-left: 2rem;
       }
 
       span{
@@ -27,7 +28,7 @@
 
   .icons{
       margin: 0;
-      width: 11rem;
+      width: 1rem;
       display: flex;
       justify-content: space-around;
       align-items: center;

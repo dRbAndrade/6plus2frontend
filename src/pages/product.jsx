@@ -15,6 +15,8 @@ import { CartContext } from "../contexts/CartContext"
 import { useContext } from "react"
 import { ProductContext } from "../contexts/ProductContext"
 import Footer from "../components/footer"
+import MeasurementGuide from "../components/measurement-guide"
+import FadeMask from "../components/fade-mask"
 
 const Product  = ()=>{
  
@@ -83,6 +85,8 @@ const Product  = ()=>{
       </main>
       </div>
       <Footer></Footer>
+      <MeasurementGuide></MeasurementGuide>
+      <FadeMask></FadeMask>
     </>
     )
 }

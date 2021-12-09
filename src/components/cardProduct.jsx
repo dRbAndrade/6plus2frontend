@@ -13,7 +13,7 @@ const CardProduct = ({product,handleButton,buttonIcon})=>{
   return(
     <>
       
-       <Card className="cardProduct border-0">
+       <Card className="cardProduct border-0" onClick={handleButton}>
          <Card.Img variant="top" src={image}/>
          <Container className="cardProductGreen g-0">
          <Row className="d-flex w-100 h-100 m-0">

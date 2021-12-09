@@ -23,7 +23,7 @@
        }
        > .toggleDescription {
               font-weight: 400;
-              font-size: calc(var(--toggler-multiplier)*1.0rem);
+              font-size: calc(var(--toggler-multiplier)*1.2rem);
               margin: 1.2rem 0rem;
        }
 }
@@ -40,7 +40,7 @@
 
 @media (min-width:1200px) {
   .toggler{
-    --toggler-multiplier:1.6;
+    --toggler-multiplier:1.4;
     .toggleShow{
       padding: 2.4rem 0rem 0rem 0rem;
     }
