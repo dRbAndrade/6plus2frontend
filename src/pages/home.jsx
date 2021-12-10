@@ -8,6 +8,7 @@ import Categories from "../components/categories"
 import {Helmet} from "react-helmet"
 import Row from "react-bootstrap/Row"
 import Footer from "../components/footer"
+import Container from "react-bootstrap/Container"
 import { useNavigate } from 'react-router';
 import { useContext } from "react"
 import { ProductContext } from "../contexts/ProductContext"
@@ -31,8 +32,9 @@ const Home = () => {
           <BannerHome></BannerHome>
           <Categories></Categories>
           <BannerPromo bannerImageUrl="https://i.imgur.com/DK42azw.png" bannerTitle="Summer Vibes" bannerSubtitle="Confira nossa seleção para esportes de verão">
-          <ButtonBlack handleSubmit={()=>navigate("/products")}>Ver produtos</ButtonBlack>
+            <ButtonBlack handleSubmit={()=>navigate("/products")}>Ver produtos</ButtonBlack>
           </BannerPromo>
+          <Container>
             <Row className="p-3 g-0 d-flex justify-content-center">
             {products.length>0&&
             <>
@@ -40,6 +42,7 @@ const Home = () => {
               <Carrossel pages={carrosselPages}></Carrossel>
             </>}
             </Row>
+          </Container>
         </main>
       </div>
       <Footer></Footer>

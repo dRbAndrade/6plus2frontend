@@ -8,7 +8,7 @@
 .products-container.row{
   --columns:1;
   display: grid;
-  grid-template-columns: repeat(var(--columns),minmax(min(100%,200px),1fr) );
+  grid-template-columns: repeat(var(--columns),minmax(200px,1fr));
   place-items: center;
   gap: 2rem;
 }
@@ -21,7 +21,7 @@
   
 }
 
-@media (min-width:600px) {
+@media (min-width:730px) {
   .products-container.row{
     --columns:3
   }
