@@ -102,7 +102,7 @@
       &.show{
         display: flex;
         &.animate{
-          animation: pop 0.3s linear infinite;
+          animation: pop 0.3s linear;
         }
       }
     }
@@ -133,7 +133,7 @@
       &.show{
         display: flex;
         &.animate{
-          animation: pop 0.3s linear infinite;
+          animation: pop 0.3s linear;
         }
       }
     }

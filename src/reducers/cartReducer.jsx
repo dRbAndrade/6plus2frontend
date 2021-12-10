@@ -27,9 +27,10 @@ export const cartReducer = (state,action) =>{
           title:"Item adicionado ao carrinho"
         });
         cartCounter.classList.add("show");
-        cartCounter.classList.add("animate")
-        cartCounter.style.animationPlayState = "running";
-        setTimeout(()=>cartCounter.style.animationPlayState = "paused",300);
+        const cartCounterClone = cartCounter.cloneNode(true)
+        cartCounterClone.textContent = state.length+1;
+        cartCounter.parentNode.replaceChild(cartCounterClone,cartCounter);
+        cartCounterClone.classList.add("animate")
         return[...state,{product,chosenSize}]
       }
     case 'REMOVE_ITEM':
