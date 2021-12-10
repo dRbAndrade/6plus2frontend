@@ -10,7 +10,7 @@ $cart-multiplier:1;
       font-size: $cart-multiplier*3rem;   
     }
     a{
-      :hover{
+      &:hover{
         color:#9ADDB7
       }
       display: flex;
