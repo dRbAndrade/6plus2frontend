@@ -14,8 +14,8 @@ const AboutCard = ({name,url,description,linkedin,github})=>{
         <Card.Text>{description}</Card.Text>
       </div>
       <div className="links-container">
-        <a href={linkedin} target="_blank" rel="noreferrer"><i className="icon-linkedin"><BsGithub /></i></a>
-        <a href={github} target="_blank" rel="noreferrer"><i className="icon-github"><BsLinkedin /></i></a>
+        <a href={linkedin} target="_blank" rel="noreferrer"><i className="icon-linkedin"><BsLinkedin /></i></a>
+        <a href={github} target="_blank" rel="noreferrer"><i className="icon-github"><BsGithub /></i></a>
       </div>
     </Card>
   )
