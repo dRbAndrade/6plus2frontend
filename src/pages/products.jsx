@@ -59,9 +59,9 @@ const Products  = (props)=>{
           url.replace("?","")
         }
       }
-    }else if(url.includes("?")){
+    }else if(url.includes("?")&&!param.includes("reset")){
       url+=`&${param}`
-    }else{
+    }else if(!param.includes("reset")){
       url+=`?${param}`
     }
     navigate(url)
