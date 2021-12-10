@@ -29,9 +29,6 @@
     a{
       text-decoration: none;
       color: #000;
-      :hover{
-       color: #9ADDB7;
-      }
     }
   }
   .logo{
@@ -41,8 +38,8 @@
   a{
     text-decoration: none;
     color: #000;
-    :hover{
-     color: #9ADDB7;
+    &:hover{
+      color: #9ADDB7;
     }
   }
   
@@ -63,7 +60,7 @@
     font-weight: 500;
     transition: left 0.3s ease-out;
     z-index: 10;
-
+    
     .close{
       position: absolute;
       top: -3rem;
